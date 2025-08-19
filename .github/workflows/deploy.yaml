@@ -16,7 +16,7 @@ jobs:
             TFLINT_VERSION: '0.46.1'
             TFSEC_VERSION: '1.28.1'
         steps:
-            - name: checkout to gthub repo
+            - name: Checkout to GitHub repository
               uses: actions/checkout@v3
 
             - name: Set up AWS credentials
@@ -26,33 +26,28 @@ jobs:
                   aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
                   aws-region: ${{ env.AWS_REGION }}
 
-            - name: setup  terraform
+            - name: Setup Terraform
               uses: hashicorp/setup-terraform@v3
               with:
                   terraform_version: ${{ env.TF_VERSION}}
 
-            - name: Format Terraform Files
-              id: fmt_recursive
+            - name: Format Terraform Files (recursive)
               run: terraform fmt -recursive
               working-directory: ./terraform
 
-            - name: Terraform Format
-              id: fmt
+            - name: Terraform Format Check
               run: terraform fmt -check
               working-directory: ./terraform
 
             - name: Terraform Init
-              id: init
               run: terraform init
               working-directory: ./terraform
 
             - name: Terraform Validate
-              id: validate
               run: terraform validate -no-color
               working-directory: ./terraform
 
             - name: Terraform Plan
-              id: plan
               run: terraform plan -no-color  -out=tfplan
               working-directory: ./terraform
 
