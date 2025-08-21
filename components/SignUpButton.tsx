@@ -6,12 +6,12 @@ const SignUpButton: React.FC = () => {
     <Link
       href="/signup"
       className="
-        px-4 py-2 rounded-lg bg-[#FF9F1C] text-white font-semibold
-        hover:bg-[#1F299C]
+        px-5 py-2 rounded-full bg-[#FBBF24] text-black font-semibold border-
+        hover:bg-[#fbbe249c] hover:text-black
         transition duration-200 cursor-pointer
       "
     >
-      Sign Up
+      Start Nest
     </Link>
   );
 };

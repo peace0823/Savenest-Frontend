@@ -8,14 +8,16 @@ const poppins = Poppins({
   subsets: ["latin"],
 });
 
-const spaceGrotesk = Space_Grotesk ({
+const spaceGrotesk = Space_Grotesk({
   weight: ['300', '400', '500', '600'],
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "M4ACE Group 5 Final Project",
-  description: "SaveNest App create with NaxtJs aNd Tailwind CSS",
+  title: "SaveNest",
+  description: "SaveNest. Save Together. Live Better.",
+  keywords: ["savings", "community", "finance", "budgeting", "nest egg"],
+  icons: { icon: "/image/Logo-blue2.png" },
 };
 
 export default function RootLayout({
@@ -25,6 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" type="image/x-icon" href="/image/Logo-blue2.png" />
+      </head>
       <body
         className={`${spaceGrotesk.className} ${poppins.className} antialiased`}
       >
