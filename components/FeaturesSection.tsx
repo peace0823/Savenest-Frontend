@@ -7,39 +7,51 @@ import { Users, Sparkles, Wallet, Gamepad2, BarChart3, Shield } from "lucide-rea
 const features = [
   {
     icon: <Users className="w-8 h-8 text-[#0466C8]" />,
-    title: "Community Savings",
+    title: "Save Together, Grow Together",
     description:
-      "Start saving with purpose. Grow with your community. Gain control of your money — one goal at a time.",
+      "Content: Join a vibrant community of savers. Pool funds, set shared goals, and celebrate milestones together. Because saving is better when you’re not alone.",
+    buttonText: 'Join the Community',
+    link: '/join',
   },
   {
     icon: <Sparkles className="w-8 h-8 text-[#0466C8]" />,
-    title: "Savings Companion",
+    title: "Your Personal Savings Ally",
     description:
-      "Start saving with purpose. Grow with your community. Gain control of your money — one goal at a time.",
+      "Meet your intelligent savings companion—always reminding, motivating, and guiding you. Like a financial coach, right in your pocket",
+    buttonText: 'Meet Your Companion',
+    link: '/join',
   },
   {
     icon: <Wallet className="w-8 h-8 text-[#0466C8]" />,
-    title: "Smart Savings",
+    title: "Save Smarter, Not Harder",
     description:
-      "Start saving with purpose. Grow with your community. Gain control of your money — one goal at a time.",
+      " Automate your savings, set flexible goals, and watch your money grow effortlessly. Saving made simple, effortless, and smart.",
+    buttonText: 'Start Smart Saving',
+    link: '/join',
   },
   {
     icon: <Gamepad2 className="w-8 h-8 text-[#0466C8]" />,
-    title: "Gamified Challenges",
+    title: "Turn Saving into a Game",
     description:
-      "Start saving with purpose. Grow with your community. Gain control of your money — one goal at a time.",
+      "Take on fun challenges, earn rewards, and climb leaderboards. Make saving exciting, addictive, and rewarding—watch your progress skyrocket!",
+    buttonText: 'Take the Challenge',
+    link: '/join',
   },
   {
     icon: <BarChart3 className="w-8 h-8 text-[#0466C8]" />,
-    title: "Budget Tracking",
+    title: "Know Where Every Naira Goes",
     description:
-      "Start saving with purpose. Grow with your community. Gain control of your money — one goal at a time.",
+      "Track spending, set budgets, and gain full control of your finances. No stress, just clarity.",
+    buttonText: 'Track Your Budget',
+    link: '/join',
   },
   {
     icon: <Shield className="w-8 h-8 text-[#0466C8]" />,
     title: "Bank-level Security",
     description:
-      "Start saving with purpose. Grow with your community. Gain control of your money — one goal at a time.",
+      " Enjoy top-tier encryption and secure transactions. With Savenest, your savings are protected 24/7. Peace of mind becomes standard.",
+    buttonText: 'Secure Your Savings',
+    link: '/join',
   },
 ];
 
@@ -49,11 +61,17 @@ export default function FeaturesSection() {
       {/* Header */}
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-[#0466C8] font-poppins">
-          Everything You Need To Save Smart
+          Join in Minutes- Quick, simple signup.
         </h2>
         <p className="mt-4 text-lg text-gray-600 font-spacegrotesk max-w-2xl mx-auto">
-          Start saving with purpose. Grow with your community. Gain control of your money — one goal at a time.
+          Set Your Goal- Emergency fund, travel, future dreams. Save Together - Watch <br />progress grow with your community.
         </p>
+
+        <div className="flex justify-center">
+          <button className="mt-6 bg-[#FBBF24] text-black py-2 px-4 font-grotesk font-bold rounded-full">
+            Start My Journey
+          </button>
+        </div>
       </div>
 
       {/* Cards */}
@@ -77,6 +95,15 @@ export default function FeaturesSection() {
             <p className="mt-2 text-gray-600 font-spacegrotesk text-sm">
               {feature.description}
             </p>
+
+            <div className="mt-auto pt-3">
+              <a
+                href={feature.link}
+                className="inline-block bg-[#FBBF24] text-black py-2 px-4 font-grotesk font-bold rounded-full"
+              >
+                {feature.buttonText}
+              </a>
+            </div>
           </motion.div>
         ))}
       </div>
