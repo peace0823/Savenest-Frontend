@@ -8,20 +8,20 @@ export default function HowItWorksSection() {
         {
             id: 1,
             value: '01',
-            title: "Meet Nesty And Set Goals",
-            body: "Create your nest by telling Nesty what you're saving for, how much, and by when."
+            title: "Meet Nesty",
+            body: "Meet Nesty, a result-oriented guide that helps you to make the right choices based on your income and expenses thereby enabling you to set your financial goals and how to achieve them."
         },
         {
             id: 2,
             value: '02',
-            title: "Automate Your Savings",
-            body: "Choose a schedule or round-up rules and let Nesty move money into your nest automatically."
+            title: "Save in Communities",
+            body: "Join a circle of like-minded individuals who have the same mindset of making their dreams achievable through every amount they save, hereby making saving enjoyable and effortless."
         },
         {
             id: 3,
             value: '03',
-            title: "Watch Progress & Withdraw",
-            body: "Track milestones, top-up when needed, and withdraw easily when you reach your goal."
+            title: "Level Up with Nesty",
+            body: "Allow Nesty to help you with your budget and make the right investment hereby making your money work for you."
         }
     ];
 
