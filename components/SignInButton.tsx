@@ -8,11 +8,11 @@ const SignInButton: React.FC = () => {
       className="
         px-4 py-2 rounded-lg 
         text-[#101010] font-semibold 
-        hover:bg-[#0466C8] hover:text-white
+        hover:bg-[#FBBF24] hover:text-black
         transition duration-200 cursor-pointer
       "
     >
-      Login
+      Sign in
     </Link>
   );
 };

@@ -1,0 +1,91 @@
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
+
+export default function HowItWorksSection() {
+    const steps = [
+        {
+            id: 1,
+            value: '01',
+            title: "Meet Nesty And Set Goals",
+            body: "Create your nest by telling Nesty what you're saving for, how much, and by when."
+        },
+        {
+            id: 2,
+            value: '02',
+            title: "Automate Your Savings",
+            body: "Choose a schedule or round-up rules and let Nesty move money into your nest automatically."
+        },
+        {
+            id: 3,
+            value: '03',
+            title: "Watch Progress & Withdraw",
+            body: "Track milestones, top-up when needed, and withdraw easily when you reach your goal."
+        }
+    ];
+
+    return (
+        <section className="pt-1 w-full flex justify-center items-center px-1 py-12">
+            <div className="w-full max-w-7xl rounded-3xl p-8 lg:p-16">
+                <div className=" overflow-hidden w-full max-w-7xl justify-center text-center rounded-3xl p-8 lg:p-11 items-center gap-8">
+                    <h2 className="text-4xl md:text-5xl text-[#0466C8] font-grotesk font-bold">
+                        How SaveNest Works
+                    </h2>
+
+                    <p className="mt-4 text-lg md:text-xl text-black font-grotesk font-semibold">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+
+                <div className="">
+                    <div className="space-y-6">
+                        {steps.map((step, idx) => {
+                            const reverse = idx % 2 === 1;
+                            return (
+                                <motion.div
+                                    key={step.id}
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="transition-all duration-300"
+                                >
+                                    <div className={`w-full max-w-7xl rounded-3xl p-8 lg:px-1 flex flex-col lg:flex-row items-center gap-8 ${reverse ? "lg:flex-row-reverse" : ""
+                                        }`}>
+                                        <div className="flex-1">
+                                            <div className={`max-w-md ${reverse ? 'lg:ml-auto lg:text-right' : 'lg:mr-auto'}`}>
+                                                <div
+                                                    aria-hidden
+                                                    className={`max-w-[70px] min-h-[70px] flex items-center justify-center rounded-2xl bg-[#1e40af] text-white text-2xl font-bold mb-4 ${reverse ? 'lg:ml-auto' : ''
+                                                        }`}
+                                                >
+                                                    {step.value}
+                                                </div>
+
+                                                <h3 className="text-lg font-semibold text-[#0f172a]">{step.title}</h3>
+                                                <p className="mt-2 text-sm text-slate-600 max-w-md">
+                                                    {step.body}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex-1 w-full flex justify-center bg-[#145ca3] rounded-4xl overflow-visible relative">
+                                            <div className="absolute -left-8 -top-8 w-20 h-20 rounded-full bg-[rgba(4,102,200,0.5)] z-20 shadow-lg" />
+                                            <Image
+                                                src="/images/welcome.png"
+                                                alt="Savenest community saving"
+                                                width={500}
+                                                height={500}
+                                                className="object-contain rounded-4xl relative z-10"
+                                            />
+                                        </div>
+                                    </div>
+
+                                </motion.div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </div>
+        </section >
+    );
+}
