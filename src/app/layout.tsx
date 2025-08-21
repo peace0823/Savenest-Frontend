@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Poppins, Space_Grotesk } from "next/font/google";
+import { Poppins, Space_Grotesk } from 'next/font/google';
+
 import "./globals.css";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -34,6 +35,7 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.className} ${poppins.className} antialiased`}
       >
+      
         {children}
       </body>
     </html>

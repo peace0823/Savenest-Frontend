@@ -1,71 +1,85 @@
-export default function SignInPage() {
+// src/app/login/page.tsx
+'use client'
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+
+export default function SigninPage() {
+  const router = useRouter();
+
+  const handleLogin = () => {
+    // In production, add auth validation here
+    router.push("/dashboard"); // Redirect to dashboard after login
+  };
+
   return (
-    <section className="pt-20 w-full flex justify-center items-center px-4 sm:px-6 lg:px-8 py-12">
-      {/* Blue rectangle container */}
-      <div className="bg-[#1F299C] overflow-hidden w-full max-w-7xl rounded-3xl p-8 lg:p-16 flex flex-col lg:flex-row items-center gap-8 ">
-        {/* Left side - Text Content */}
-        <div className="flex-1 text-left">
-
-          {/* Headline */}
-          <h1 className="text-4xl md:text-5xl font-bold text-soft-off text-white font-poppins leading-tight">
-            Save Together, <br /> Live Better.
-          </h1>
-
-          {/* Sub-headline */}
-          <p className="mt-6 text-lg md:text-xl text-soft-off text-white font-grotesk max-w-lg">
-            Build your savings, feel secure, and grow with a community that’s got your back.
-          </p>
-
-          <div className="lg:pt-10">
-            <div className="overflow-hidden flex flex-col lg:flex-row items-center justify-center align-middle">
-              {/* Left side - Text Content */}
-              <div className="flex-1 text-left justify-center">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="w-70 px-4 py-2 border rounded-xl bg-[#F3F4F6]"
-                // onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-
-              {/* Right side - Image */}
-              <div className="flex-1 w-full flex justify-center">
-                <button className="bg-[#FBBF24] hover:bg-[#c59417] hover:text-white text-black py-2 px-5 font-grotesk font-bold text-md rounded-4xl ">
-                  Start Saving Smarter
-                </button>
-              </div>
-            </div>
-            <div className="mt-2">
-              <span className="text-sm text-soft-off text-white"> Bank-level security. No hidden fees.</span>
-            </div>
-          </div>
+    <div className="min-h-screen flex flex-col md:flex-row font-poppins">
+      {/* Left side */}
+      <div className="w-full md:w-[60%] bg-[#F9FAFB] flex flex-col items-center justify-center p-10 relative">
+        {/* Logo + Brand name */}
+        <div className="absolute top-6 left-6 flex items-center gap-2">
+          <div  />
+          <Image src="/images/Logo-blue1.png" alt="logo" width={70} height={70} />
+          <span className="text-[#1F299C] font-bold text-xl">Savenest</span>
         </div>
 
-        {/* Right side - Image */}
-        <div className="flex-1 w-full flex justify-center">
-          <div className="max-w-md mx-auto py-10 px-4 pt-20">
-            <h1 className="text-3xl font-bold mb-6">Sign In</h1>
-            <form className="space-y-4">
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full px-4 py-2 border rounded-lg"
-              />
-              <input
-                type="password"
-                placeholder="Password"
-                className="w-full px-4 py-2 border rounded-lg"
-              />
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700"
-              >
-                Sign In
-              </button>
-            </form>
+        {/* Heading */}
+        <h1 className="text-4xl font-bold text-[#1F299C] mb-6">Sign in</h1>
+
+        {/* Image box */}
+        <div className="w-full max-w-[500px] flex items-center justify-center">
+          <Image
+            src="/images/welcome.png"
+            alt="hello"
+            width={800}
+            height={800}
+            className="w-full h-auto object-contain"
+          />
+        </div>
+      </div>
+
+      {/* Right side */}
+      <div className="w-full md:w-[60%] flex items-center justify-center bg-white">
+        <div className="w-full max-w-xl border border-[#0466C8] rounded-xl p-8 shadow-md m-6">
+          {/* Email input */}
+          <label className="block text-[#1F299C] font-semibold mb-2">
+            Type in your Email
+          </label>
+          <input
+            type="email"
+            placeholder="janedoe@gmail.com"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-[#0466C8]"
+          />
+
+          {/* Password input */}
+          <label className="block text-[#1F299C] font-semibold mb-2">
+            Type in your Password
+          </label>
+          <input
+            type="password"
+            placeholder="********"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg mb-6 focus:outline-none focus:ring-2 focus:ring-[#0466C8]"
+          />
+
+          {/* Login button */}
+          <button
+            onClick={handleLogin}
+            className="w-full bg-[#FF9F1C] hover:bg-[#e68a00] text-white font-bold py-3 rounded-full transition"
+          >
+            Login
+          </button>
+
+          {/* Forgot password */}
+          <div className="text-right mt-3">
+            <Link
+              href="/forgot-password"
+              className="text-sm text-[#0466C8] hover:underline"
+            >
+              Forgot Password?
+            </Link>
           </div>
         </div>
       </div>
-    </section >
+    </div>
   );
 }

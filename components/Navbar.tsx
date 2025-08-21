@@ -63,23 +63,34 @@ const Navbar: React.FC = () => {
       {/* Mobile Dropdown with Animation */}
       <AnimatePresence>
         {isOpen && (
+
           <motion.div
-            key="mobile-menu"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden bg-[#F9FAFB] shadow-lg px-6 py-4 space-y-4 overflow-hidden"
-          >
-            <NavLink href="/" label="Home" />
-            <NavLink href="/community" label="Community" />
-            <NavLink href="/savings" label="Savings" />
-            <NavLink href="/contact-us" label="Contact Us" />
-            <div className="flex space-x-4 pt-2">
-              <SignInButton />
-              <SignUpButton />
-            </div>
-          </motion.div>
+  key="mobile-menu"
+  initial={{ height: 0, opacity: 0 }}
+  animate={{ height: "auto", opacity: 1 }}
+  exit={{ height: 0, opacity: 0 }}
+  transition={{ duration: 0.3, ease: "easeInOut" }}
+  className="md:hidden bg-[#F9FAFB] shadow-lg px-6 py-4 overflow-hidden"
+>
+  <div className="flex flex-col space-y-4">
+    <NavLink href="/" label="Home" />
+    <NavLink href="/community" label="Community" />
+    <NavLink href="/savings" label="Savings" />
+    <NavLink href="/contact-us" label="Contact Us" />
+  </div>
+  <div className="flex flex-col space-y-2 pt-4">
+    <SignInButton />
+    <SignUpButton />
+  </div>
+</motion.div>
+
+
+
+
+
+
+
+
         )}
       </AnimatePresence>
     </nav>
