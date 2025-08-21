@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700'],
@@ -33,7 +34,6 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.className} ${poppins.className} antialiased`}
       >
-        <Navbar />
         {children}
       </body>
     </html>
