@@ -1,9 +1,8 @@
 "use client";
 
-import { SessionProvider } from "next-auth/react";
 import { ReactNode } from "react";
 
-// Wraps your app with NextAuth SessionProvider (client side)
+// Generic provider wrapper (can be extended later)
 export default function Providers({ children }: { children: ReactNode }) {
-  return <SessionProvider>{children}</SessionProvider>;
+  return <>{children}</>;
 }
