@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import { Poppins, Space_Grotesk } from 'next/font/google';
-
-import "./globals.css";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import { Poppins, Space_Grotesk } from "next/font/google";
+import "./globals.css"
 
 const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700'],
@@ -16,8 +13,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "SaveNest",
-  description: "SaveNest. Save Together. Live Better.",
+  title: "Savenest",
+  description: "Savenest. Save Together. Live Better.",
   keywords: ["savings", "community", "finance", "budgeting", "nest egg"],
   icons: { icon: "/image/Logo-blue2.png" },
 };
@@ -30,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" type="image/x-icon" href="/image/Logo-blue2.png" />
+        <link rel="icon" type="image/x-icon" href="../public/images/Logo-blue2.png" />
       </head>
       <body
         className={`${spaceGrotesk.className} ${poppins.className} antialiased`}
