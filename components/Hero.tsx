@@ -4,11 +4,13 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Hero() {
+  
   const [email, setEmail] = useState("");
+
   return (
     <section className="pt-30 w-full flex justify-center items-center px-4 sm:px-6 lg:px-8 py-12">
       {/* Blue rectangle container */}
-      <div className="bg-[#1F299C] overflow-hidden w-full max-w-7xl rounded-3xl p-8 lg:p-16 flex flex-col lg:flex-row items-center gap-8 ">
+      <div className="bg-[#1F299C] overflow-hidden w-full max-w-7xl rounded-3xl p-8 lg:p-16 flex flex-col lg:flex-row items-center gap-8">
         {/* Left side - Text Content */}
         <div className="flex-1 text-left">
 
@@ -23,7 +25,7 @@ export default function Hero() {
           </p>
 
           <div className="pt-8">
-            <div className="overflow-hidden flex flex-col lg:flex-row  align-middle gap-3">
+            <div className="overflow-hidden flex flex-col lg:flex-row align-middle gap-3">
               {/* Left side - Text Content */}
               <div className="flex-1 text-left justify-center">
                 <input
@@ -36,7 +38,7 @@ export default function Hero() {
 
               {/* Right side - Image */}
               <div className="flex-1 w-full flex ">
-                <button className="bg-[#FBBF24] hover:bg-[#c59417] hover:text-white text-black py-2 px-5 font-grotesk font-bold text-md rounded-4xl ">
+                <button className="bg-[#FBBF24] hover:bg-[#c59417] hover:text-white text-black py-2 px-5 font-grotesk font-bold text-md rounded-4xl">
                   Start Saving Smarter
                 </button>
               </div>
@@ -54,7 +56,7 @@ export default function Hero() {
             alt="Savenest community saving"
             width={500}
             height={400}
-            className=" object-contain"
+            className="object-contain"
           />
         </div>
       </div>

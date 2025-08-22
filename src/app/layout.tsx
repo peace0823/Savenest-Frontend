@@ -32,7 +32,6 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.className} ${poppins.className} antialiased`}
       >
-      
         {children}
       </body>
     </html>

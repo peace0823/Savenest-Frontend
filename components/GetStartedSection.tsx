@@ -27,7 +27,7 @@ export default function GetStartedSection({ nextStep, onNext, }: { nextStep?: ()
                     className="transition-all duration-300 flex-1 w-full h-[500px] flex flex-col justify-between border-[#1F299C] border-2 max-w-7xl rounded-3xl p-8 lg:p-10 items-center gap-8"
                 >
                     <div className="self-start align-top max-w-lg flex flex-col gap-2">
-                        <p className="text-lg flex-1 xl:text-xl text-soft-off text-[#1F299C] font-grotesk ">
+                        <p className="text-lg flex-1 xl:text-xl text-soft-off text-[#1F299C] font-grotesk">
                             Create Your Account
                         </p>
 
