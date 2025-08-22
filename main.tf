@@ -136,11 +136,20 @@ module "cognito_end_user" {
 
 }
 
-# module "s3" {
-#   source           = "./modules/s3"
-#   RESOURCES_PREFIX = local.RESOURCES_PREFIX
-# }
+module "s3" {
+  source           = "./modules/s3"
+  environment      = var.ENV
+  bucket_name      = "savenest-email-template"
+  RESOURCES_PREFIX = local.RESOURCES_PREFIX
+}
 
+module "cloudfront" {
+  source                      = "./modules/cloudfront"
+  environment                 = var.ENV
+  bucket_name                 = module.s3.bucket_name
+  bucket_arn                  = module.s3.bucket_arn
+  bucket_regional_domain_name = module.s3.bucket_regional_domain_name
+}
 
 ##==================================================
 #  SES creation..
