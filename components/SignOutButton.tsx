@@ -1,16 +1,11 @@
 "use client";
 
-import { signOut } from "next-auth/react";
-
 type Props = {
-  // Optional: where to send the user after sign out (default: "/")
   redirectTo?: string;
-  // Optional: make it small/medium/large
   size?: "sm" | "md" | "lg";
 };
 
 export default function SignOutButton({ redirectTo = "/", size = "md" }: Props) {
-  // Brand-aware sizing (Savenest colors + rounded style)
   const sizeClasses =
     size === "sm"
       ? "px-3 py-1.5 text-sm"
@@ -20,7 +15,7 @@ export default function SignOutButton({ redirectTo = "/", size = "md" }: Props) 
 
   return (
     <button
-      onClick={() => signOut({ callbackUrl: redirectTo })}
+      onClick={() => window.location.href = redirectTo}
       className={`inline-flex items-center justify-center ${sizeClasses}
         bg-[#FF9F1C] text-white rounded-xl font-poppins
         hover:bg-orange-500 transition

@@ -25,7 +25,7 @@ export default function HowItWorksSection() {
             value: '03',
             title: "Level Up with Nesty",
             body: "Allow Nesty to help you with your budget and make the right investment hereby making your money work for you.",
-            image: "/images/my-app.png"
+            image: "/images/aapp.png"
         }
     ];
 
