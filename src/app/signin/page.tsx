@@ -17,7 +17,8 @@ export default function SigninPage() {
   return (
     <section className="w-fullustify-center items-center px-4 sm:px-6 lg:px-8">
       <div className="w-full flex justify-center items-center px-4 sm:px-6 lg:px-8">
-        <div className="overflow-hidden w-full max-w-7xl py-2 flex flex-col lg:flex-row items-center gap-8 ">
+        <div className="overflow-hidden w-full max-w-7xl py-2 flex flex-col lg:flex-row items-center gap-8">
+
           {/* LEFT: Logo + Name */}
           <div className="flex-1 w-full flex justify-start">
             <Link href="/" className="flex items-center space-x-2">
@@ -32,8 +33,8 @@ export default function SigninPage() {
 
           {/* Right side - Text content */}
           <Link href="/signup" className="flex-1 text-right space-x-2">
-            <span className="mt-6 text-sm md:text-md text-soft-off text-black font-grotesk ">
-              Don't have an account? <br />
+            <span className="mt-6 text-sm md:text-md text-soft-off text-black font-grotesk">
+              Don&apos;t have an account? <br />
               Create one in minutes!
             </span>
           </Link>
@@ -72,7 +73,7 @@ export default function SigninPage() {
                   href="/signup"
                   className="text-sm text-[#1F299C] font-medium hover:underline font-grotesk"
                 >
-                  Don't have an account? Sign up
+                  Don&apos;t have an account? Sign up
                 </Link>
               </div>
             </>
@@ -86,7 +87,7 @@ export default function SigninPage() {
               className="w-full max-w-xl border border-[#0466C8] rounded-xl p-8 shadow-md m-6"
             >
               <div className="self-start align-top max-w-lg flex flex-col gap-2 lg:py-4 mb-5">
-                <p className="text-lg flex-1 xl:text-xl text-soft-off text-[#1F299C] font-grotesk ">
+                <p className="text-lg flex-1 xl:text-xl text-soft-off text-[#1F299C] font-grotesk">
                   Enter Your Details
                 </p>
 
