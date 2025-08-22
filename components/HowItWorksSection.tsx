@@ -28,9 +28,9 @@ export default function HowItWorksSection() {
     return (
         <section className="pt-1 w-full flex justify-center items-center px-1 py-12">
             <div className="w-full max-w-7xl rounded-3xl p-8 lg:p-16">
-                <div className=" overflow-hidden w-full max-w-7xl justify-center text-center rounded-3xl p-8 lg:p-11 items-center gap-8">
+                <div className="w-full max-w-7xl justify-center text-center rounded-3xl p-8 lg:p-11 items-center gap-8">
                     <h2 className="text-4xl md:text-5xl text-[#0466C8] font-grotesk font-bold">
-                        How SaveNest Works
+                        How Savenest Works
                     </h2>
 
                     <p className="mt-4 text-lg md:text-xl text-black font-grotesk font-semibold">

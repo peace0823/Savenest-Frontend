@@ -9,7 +9,7 @@ const features = [
     icon: <Users className="w-8 h-8 text-[#0466C8]" />,
     title: "Save Together, Grow Together",
     description:
-      "Content: Join a vibrant community of savers. Pool funds, set shared goals, and celebrate milestones together. Because saving is better when you’re not alone.",
+      "Join a vibrant community of savers. Pool funds, set shared goals, and celebrate milestones together. Saving is better when you’re not alone.",
     buttonText: 'Join the Community',
     link: '/join',
   },
@@ -25,7 +25,7 @@ const features = [
     icon: <Wallet className="w-8 h-8 text-[#0466C8]" />,
     title: "Save Smarter, Not Harder",
     description:
-      " Automate your savings, set flexible goals, and watch your money grow effortlessly. Saving made simple, effortless, and smart.",
+      "Automate your savings, set flexible goals, and watch your money grow effortlessly. Saving made simple, effortless, and smart.",
     buttonText: 'Start Smart Saving',
     link: '/join',
   },
@@ -49,7 +49,7 @@ const features = [
     icon: <Shield className="w-8 h-8 text-[#0466C8]" />,
     title: "Bank-level Security",
     description:
-      " Enjoy top-tier encryption and secure transactions. With Savenest, your savings are protected 24/7. Peace of mind becomes standard.",
+      "Enjoy top-tier encryption and secure transactions. With Savenest, your savings are protected 24/7. Peace of mind becomes standard.",
     buttonText: 'Secure Your Savings',
     link: '/join',
   },
@@ -64,7 +64,7 @@ export default function FeaturesSection() {
           Join in Minutes- Quick, simple signup.
         </h2>
         <p className="mt-4 text-lg text-gray-600 font-spacegrotesk max-w-2xl mx-auto">
-          Set Your Goal- Emergency fund, travel, future dreams. Save Together - Watch <br />progress grow with your community.
+          Set Your Goal- Emergency fund, travel, future dreams.<br /> Save Together - Watch progress grow with your community.
         </p>
 
         <div className="flex justify-center">

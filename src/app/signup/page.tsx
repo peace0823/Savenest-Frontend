@@ -1,72 +1,68 @@
+"use client"
+
+import { useState } from "react";
+import GetStartedSection from "../../../components/GetStartedSection";
+import VerifyEmailSection from "../../../components/VerifyEmailSection";
+import Link from "next/link";
+import Image from "next/image";
+import RegisterFormSection from "../../../components/RegisterFormSection";
+
 export default function SignUpPage() {
+  const [step1, setStep1] = useState(true)
+  const [step2, setStep2] = useState(false)
+  const [step3, setStep3] = useState(false)
   return (
-        <section className="pt-20 w-full flex justify-center items-center px-4 sm:px-6 lg:px-8 py-12">
-      {/* Blue rectangle container */}
-      <div className="bg-[#1F299C] overflow-hidden w-full max-w-7xl rounded-3xl p-8 lg:p-16 flex flex-col lg:flex-row items-center gap-8 ">
-        {/* Left side - Text Content */}
-        <div className="flex-1 text-left">
+    <section className="w-full justify-center items-center px-4 sm:px-6 lg:px-8">
+      <div className="w-full flex justify-center items-center px-4 sm:px-6 lg:px-8">
 
-          {/* Headline */}
-          <h1 className="text-4xl md:text-5xl font-bold text-soft-off text-white font-poppins leading-tight">
-            Save Together, <br /> Live Better.
-          </h1>
-
-          {/* Sub-headline */}
-          <p className="mt-6 text-lg md:text-xl text-soft-off text-white font-grotesk max-w-lg">
-            Build your savings, feel secure, and grow with a community that’s got your back.
-          </p>
-
-          <div className="lg:pt-10">
-            <div className="overflow-hidden flex flex-col lg:flex-row items-center justify-center align-middle">
-              {/* Left side - Text Content */}
-              <div className="flex-1 text-left justify-center">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="w-70 px-4 py-2 border rounded-xl bg-[#F3F4F6]"
-                // onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-
-              {/* Right side - Image */}
-              <div className="flex-1 w-full flex justify-center">
-                <button className="bg-[#FBBF24] hover:bg-[#c59417] hover:text-white text-black py-2 px-5 font-grotesk font-bold text-md rounded-4xl ">
-                  Start Saving Smarter
-                </button>
-              </div>
-            </div>
-            <div className="mt-2">
-              <span className="text-sm text-soft-off text-white"> Bank-level security. No hidden fees.</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Right side - Image */}
-        <div className="flex-1 w-full flex justify-center">
-          <div className="max-w-md mx-auto py-10 px-4 pt-20">
-            <h1 className="text-3xl font-bold mb-6">Sign In</h1>
-            <form className="space-y-4">
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full px-4 py-2 border rounded-lg"
+        <div className="overflow-hidden w-full max-w-7xl py-2 flex flex-col lg:flex-row items-center gap-8 ">
+          {/* LEFT: Logo + Name */}
+          <div className="flex-1 w-full flex justify-start">
+            <Link href="/" className="flex items-center space-x-2">
+              <Image src="/images/Logo-blue2.png"
+                alt="Logo"
+                height={40}
+                width={40}
               />
-              <input
-                type="password"
-                placeholder="Password"
-                className="w-full px-4 py-2 border rounded-lg"
-              />
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700"
-              >
-                Sign In
-              </button>
-            </form>
+              <span className="text-xl font-bold text-[#1F299C]">Savenest</span>
+            </Link>
           </div>
+
+          {/* Right side - Text content */}
+          <Link href="/signin" className="flex-1 text-right space-x-2">
+            <span className="mt-6 text-sm md:text-md text-soft-off text-black font-grotesk ">
+              Already have an account? <br />
+              Get back in your nest!
+            </span>
+          </Link>
+
         </div>
       </div>
-    </section >
-   
+      {
+        step1 && (
+          <GetStartedSection
+            nextStep={() => setStep1(false)}
+            onNext={() => setStep2(true)}
+          />
+        )
+      }
+      {
+        step2 && (
+          <VerifyEmailSection
+            nextStep={() => setStep2(false)}
+            onNext={() => setStep3(true)}
+          />
+        )
+      }
+      {
+        step3 && (
+          <RegisterFormSection
+            nextStep={() => setStep3(false)}
+            onNext={() => { }}
+          />
+        )
+      }
+    </section>
   );
 }
+
