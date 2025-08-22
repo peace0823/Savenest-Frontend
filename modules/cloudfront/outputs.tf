@@ -1,5 +1,4 @@
-
-output "cloudfrontId" {
+output "cloudfront_Id" {
   value = aws_cloudfront_distribution.savenest_frontend.id
 }
 

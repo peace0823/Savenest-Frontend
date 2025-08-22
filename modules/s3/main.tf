@@ -10,8 +10,9 @@ resource "aws_s3_bucket" "savenest" {
   }
 }
 
-resource "aws_s3_bucket_versioning" "versioning_example" {
+resource "aws_s3_bucket_versioning" "versioning" {
   bucket = aws_s3_bucket.savenest.id
+
   versioning_configuration {
     status = "Enabled"
   }
@@ -20,23 +21,7 @@ resource "aws_s3_bucket_versioning" "versioning_example" {
 resource "aws_s3_bucket_public_access_block" "savenest-public_access" {
   bucket                  = aws_s3_bucket.savenest.id
   block_public_acls       = true
-  block_public_policy     = false # Disable blocking public policies
+  block_public_policy     = true
   ignore_public_acls      = true
-  restrict_public_buckets = false
+  restrict_public_buckets = true
 }
-
-# resource "aws_s3_bucket_policy" "bucket_policy" {
-#   bucket = aws_s3_bucket.m4ace.id
-#   policy = jsonencode({
-#     "Version" : "2012-10-17",
-#     "Statement" : [
-#       {
-#         "Sid" : "AllowReadOnlyAccess",
-#         "Effect" : "Allow",
-#         "Principal" : "*",
-#         "Action" : "s3:*",
-#         "Resource" : "arn:aws:s3:::${var.bucket_name}/*"
-#       }
-#     ]
-#   })
-# }
