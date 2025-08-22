@@ -16,7 +16,7 @@ export default function GetStartedSection({ nextStep, onNext, }: { nextStep?: ()
                         Get Started
                     </h1>
                     <p className="mt-6 text-lg md:text-xl text-soft-off text-black font-grotesk max-w-lg">
-                        We're just one step away from completing your sign-up. To ensure the security of your account , we need to verify your details.
+                        We re just one step away from completing your sign-up. To ensure the security of your account, we need to verify your details.
                     </p>
                 </div>
 
