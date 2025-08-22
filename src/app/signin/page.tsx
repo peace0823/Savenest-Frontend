@@ -91,9 +91,6 @@ export default function SigninPage() {
                   Enter Your Details
                 </p>
 
-                <p className="text-md flex-1 sm:text-sm text-soft-off text-black font-grotesk max-w-lg">
-                  Fill in your details to create a new account.
-                </p>
               </div>
 
               {/* Email input */}

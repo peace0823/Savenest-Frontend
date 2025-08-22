@@ -16,9 +16,20 @@ export default function VerifyEmailSection({ nextStep, onNext }: { nextStep?: ()
                     <h1 className="text-5xl md:text-6xl font-bold text-[#1F299C] font-grotesk">
                         Verify Email
                     </h1>
-                    <p className="mt-6 text-lg md:text-xl text-soft-off text-black font-grotesk max-w-lg">
-                        Please enter the verification code sent to your email.
-                    </p>
+
+                    <ul className="mt-6 text-lg md:text-xl text-soft-off text-black font-grotesk list-disc list-inside space-y-2">
+                    <li>Almost there! Verify Your Email</li>
+                    <li>We sent a 4-digit code to your email.</li>
+                    <li>Check your inbox and enter the code below.</li>
+                    <li>CTA: Confirm Code</li>
+                    </ul>
+
+                <p className="mt-6 text-lg md:text-xl text-soft-off text-black font-grotesk max-w-lg">
+                  Trusted by over thousands of people like you<br />
+                  to save smart and grow with intentionality.
+                 </p>
+
+
                 </div>
 
                 {/* Right side - Form */}

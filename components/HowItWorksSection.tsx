@@ -9,19 +9,23 @@ export default function HowItWorksSection() {
             id: 1,
             value: '01',
             title: "Meet Nesty",
-            body: "Meet Nesty, a result-oriented guide that helps you to make the right choices based on your income and expenses thereby enabling you to set your financial goals and how to achieve them."
+            body: "Meet Nesty, a result-oriented guide that helps you to make the right choices based on your income and expenses thereby enabling you to set your financial goals and how to achieve them.",
+             image: "/images/App.png"
         },
         {
             id: 2,
             value: '02',
             title: "Save in Communities",
-            body: "Join a circle of like-minded individuals who have the same mindset of making their dreams achievable through every amount they save, hereby making saving enjoyable and effortless."
-        },
+            body: "Join a circle of like-minded individuals who have the same mindset of making their dreams achievable through every amount they save, hereby making saving enjoyable and effortless.",
+            image: "/images/money.png"
+        }, 
+
         {
             id: 3,
             value: '03',
             title: "Level Up with Nesty",
-            body: "Allow Nesty to help you with your budget and make the right investment hereby making your money work for you."
+            body: "Allow Nesty to help you with your budget and make the right investment hereby making your money work for you.",
+            image: "/images/my-app.png"
         }
     ];
 
@@ -34,7 +38,7 @@ export default function HowItWorksSection() {
                     </h2>
 
                     <p className="mt-4 text-lg md:text-xl text-black font-grotesk font-semibold">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Savenest is a savings app that secures your money with a saving plan of your own choice and also provides you a community that makes saving enjoyable.
                     </p>
                 </div>
 
@@ -71,12 +75,16 @@ export default function HowItWorksSection() {
                                         <div className="flex-1 w-full flex justify-center bg-[#145ca3] rounded-4xl overflow-visible relative">
                                             <div className="absolute -left-8 -top-8 w-20 h-20 rounded-full bg-[rgba(4,102,200,0.5)] z-20 shadow-lg" />
                                             <Image
-                                                src="/images/welcome.png"
-                                                alt="Savenest community saving"
-                                                width={500}
-                                                height={500}
-                                                className="object-contain rounded-4xl relative z-10"
-                                            />
+                                              src={step.image}
+                                              alt={step.title}
+                                              width={600}
+                                              height={500}
+                                               className="object-contain rounded-4xl relative z-10"
+                                              />
+
+
+
+
                                         </div>
                                     </div>
 
