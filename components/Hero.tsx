@@ -20,7 +20,7 @@ export default function Hero() {
 
           {/* Sub-headline */}
           <p className="mt-6 text-lg md:text-xl text-white font-grotesk max-w-lg">
-            Savenest helps you build financial stability through group savings, personal coaching, and simple tools—right from your phone.
+            Savenest helps you build financial stability through group savings, personal coaching, and simple tools—right from your phone
           </p>
 
           {/* Email input and CTA */}

@@ -28,11 +28,11 @@ const Navbar: React.FC = () => {
           height={40}
           width={40}
           />
-          <span className="text-xl font-bold text-[#1F299C]">Savenest</span>
+          <span className="text-xl font-[Poppins] font-bold text-[#1F299C]">Savenest</span>
         </Link>
 
         {/* CENTER: Desktop Menu */}
-        <div className="hidden md:flex space-x-8 ">
+        <div className="hidden md:flex space-x-8 font-[Poppins]">
           <NavLink href="/" label="Home" />
           <NavLink href="/community" label="Community" />
           <NavLink href="/savings" label="Savings" />
@@ -83,11 +83,6 @@ const Navbar: React.FC = () => {
     <SignUpButton />
   </div>
 </motion.div>
-
-
-
-
-
 
 
 

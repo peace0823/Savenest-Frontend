@@ -33,11 +33,11 @@ export default function HowItWorksSection() {
         <section className="pt-1 w-full flex justify-center items-center px-1 py-12">
             <div className="w-full max-w-7xl rounded-3xl p-8 lg:p-16">
                 <div className="w-full max-w-7xl justify-center text-center rounded-3xl p-8 lg:p-11 items-center gap-8">
-                    <h2 className="text-4xl md:text-5xl text-[#0466C8] font-grotesk font-bold">
+                    <h2 className="text-4xl md:text-5xl text-[#0466C8] font-poppins font-bold">
                         How Savenest Works
                     </h2>
 
-                    <p className="mt-4 text-lg md:text-xl text-black font-grotesk font-semibold">
+                    <p className="mt-4 text-lg md:text-xl text-slate-600 font-grotesk font-semibold">
                     Savenest is a savings app that secures your money with a saving plan of your own choice and also provides you a community that makes saving enjoyable.
                     </p>
                 </div>
@@ -65,8 +65,8 @@ export default function HowItWorksSection() {
                                                     {step.value}
                                                 </div>
 
-                                                <h3 className="text-lg font-semibold text-[#0f172a]">{step.title}</h3>
-                                                <p className="mt-2 text-sm text-slate-600 max-w-md">
+                                                <h3 className="text-2xl font-[Poppins] font-bold text-[#0f172a]">{step.title}</h3>
+                                                <p className="mt-2 text-2xl text-shadow-slate-600 max-w-md">
                                                     {step.body}
                                                 </p>
                                             </div>

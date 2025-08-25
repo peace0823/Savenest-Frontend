@@ -27,17 +27,22 @@ export default function SigninPage() {
                 height={40}
                 width={40}
               />
-              <span className="text-xl font-bold text-[#1F299C]">Savenest</span>
+              <span className="text-xl font-bold text-[#1F299C] font-[Poppins]">Savenest</span>
             </Link>
           </div>
 
-          {/* Right side - Text content */}
+            
+          {/* Right side - Text content 
           <Link href="/signup" className="flex-1 text-right space-x-2">
             <span className="mt-6 text-sm md:text-md text-soft-off text-black font-grotesk">
               Don&apos;t have an account? <br />
-              Create one in minutes!
+              Create one in 60 seconds!
             </span>
           </Link>
+          */}
+
+
+
 
         </div>
       </div>
@@ -45,7 +50,7 @@ export default function SigninPage() {
         <div className="w-full max-w-7xl rounded-3xl flex flex-col lg:flex-row items-center gap-20">
           {/* Left side */}
           <div className="w-full max-w-7xl md:w-[60%] flex flex-col items-start justify-center p-10 relative">
-            <h1 className="text-6xl md:text-6xl font-bold text-[#1F299C] font-grotesk">
+            <h1 className="text-6xl md:text-6xl font-semi-bold text-[#1F299C] font-poppins">
               Login to Your Nest
             </h1>
             <>
@@ -71,9 +76,9 @@ export default function SigninPage() {
               <div className="mt-6">
                 <Link
                   href="/signup"
-                  className="text-sm text-[#1F299C] font-medium hover:underline font-grotesk"
+                  className="text-md text-[#1F299C] font-semibold hover:underline font-grotesk"
                 >
-                  Don&apos;t have an account? Sign up
+                  Don&apos;t have an account? <br />Create one in 60 seconds
                 </Link>
               </div>
             </>

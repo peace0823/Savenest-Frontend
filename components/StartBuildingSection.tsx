@@ -9,7 +9,7 @@ export default function StartBuildingSection() {
             <div className="bg-[#1F299C] overflow-hidden gap-y-10 w-full max-w-7xl h-full rounded-3xl p-8 lg:p-25 items-center ">
                 {/* Headline */}
                 <h1 className="text-4xl md:text-5xl font-bold text-soft-off text-white font-grotesk leading-tight text-center lg:py-5">
-                    Your Future Self Will Thank You.
+                    Your Future Self Will Thank You
                 </h1>
 
                 {/* Sub-headline */}

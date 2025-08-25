@@ -3,6 +3,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function GetStartedSection({ nextStep, onNext, }: { nextStep?: () => void, onNext: () => void }) {
     const [email, setEmail] = useState<string>("");
@@ -12,13 +13,41 @@ export default function GetStartedSection({ nextStep, onNext, }: { nextStep?: ()
             <div className="w-full max-w-7xl rounded-3xl flex flex-col lg:flex-row items-center gap-20">
                 {/* Left side - Text Content */}
                 <div className="flex-1 w-full flex flex-col justify-start items-start max-w-lg">
-                    <h1 className="text-5xl md:text-6xl font-bold text-[#1F299C] font-grotesk">
+                    <h1 className="text-5xl md:text-6xl font-semi-bold text-[#1F299C] font-[Poppins]">
                         Get Started
                     </h1>
-                    <p className="mt-6 text-lg md:text-xl text-soft-off text-black font-grotesk max-w-lg">
+                    <p className="mt-6 text-lg md:text-xl text-soft-off text-black font-grotesk max-w-lg mb-10">
                         We re just one step away from completing your sign-up. To ensure the security of your account, we need to verify your details.
                     </p>
+
+                    
+                  <div>
+                  {/* Right side - Text content */}
+          <Link href="/signin" className="flex-1 text-right space-x-2 ">
+            <span className="mt-6 text-md md:text-md text-soft-off font-grotesk hover:underline text-[#1F299C]">
+              Already have an account? <br />
+              Sign in
+            </span>
+          </Link>
+
+          </div>
+
+
+
+
+
                 </div>
+
+              
+
+
+
+
+
+
+
+
+
 
                 {/* Right side - Form */}
                 <motion.div

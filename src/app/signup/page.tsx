@@ -24,17 +24,19 @@ export default function SignUpPage() {
                 height={40}
                 width={40}
               />
-              <span className="text-xl font-bold text-[#1F299C]">Savenest</span>
+              <span className="text-xl font-bold font-[Poppins] text-[#1F299C]">Savenest</span>
             </Link>
           </div>
 
-          {/* Right side - Text content */}
+          {/* Right side - Text content
           <Link href="/signin" className="flex-1 text-right space-x-2">
             <span className="mt-6 text-sm md:text-md text-soft-off text-black font-grotesk ">
               Already have an account? <br />
               Get back in your nest!
             </span>
           </Link>
+          */}
+          
 
         </div>
       </div>

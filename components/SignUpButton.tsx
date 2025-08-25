@@ -8,8 +8,7 @@ const SignUpButton: React.FC = () => {
       className="
         px-5 py-2 rounded-full bg-[#FBBF24] text-black font-semibold border-
         hover:bg-[#fbbe249c] hover:text-black
-        transition duration-200 cursor-pointer
-      "
+        transition duration-200 cursor-pointer font-poppins"
     >
       Start Nest
     </Link>

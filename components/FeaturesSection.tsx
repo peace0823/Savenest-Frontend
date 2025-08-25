@@ -7,7 +7,7 @@ import { Users, Sparkles, Wallet, Gamepad2, BarChart3, Shield } from "lucide-rea
 const features = [
   {
     icon: <Users className="w-8 h-8 text-[#0466C8]" />,
-    title: "Save Together, Grow Together",
+    title: "Community Savings",
     description:
       "Join a vibrant community of savers. Pool funds, set shared goals, and celebrate milestones together. Saving is better when you’re not alone.",
     buttonText: 'Join the Community',
@@ -15,31 +15,31 @@ const features = [
   },
   {
     icon: <Sparkles className="w-8 h-8 text-[#0466C8]" />,
-    title: "Your Personal Savings Ally",
+    title: "Savings Companion",
     description:
-      "Meet your intelligent savings companion—always reminding, motivating, and guiding you. Like a financial coach, right in your pocket",
+      "Meet a smart accountability partner that makes saving both inspiring and motivating, enabling you to develop financial discipline.",
     buttonText: 'Meet Your Companion',
     link: '/join',
   },
   {
     icon: <Wallet className="w-8 h-8 text-[#0466C8]" />,
-    title: "Save Smarter, Not Harder",
+    title: "Smart savings",
     description:
-      "Automate your savings, set flexible goals, and watch your money grow effortlessly. Saving made simple, effortless, and smart.",
+      "Choose your savings plan, whether weekly or monthly, then automate your savings to meet your financial goals.",
     buttonText: 'Start Smart Saving',
     link: '/join',
   },
   {
     icon: <Gamepad2 className="w-8 h-8 text-[#0466C8]" />,
-    title: "Turn Saving into a Game",
+    title: "Savings doesn't have to be boring.",
     description:
-      "Take on fun challenges, earn rewards, and climb leaderboards. Make saving exciting, addictive, and rewarding—watch your progress skyrocket!",
+      "Engaging in our games is fun, relieves you of stress, improves your problem-solving skills, and leaves you excited and motivated to save.",
     buttonText: 'Take the Challenge',
     link: '/join',
   },
   {
     icon: <BarChart3 className="w-8 h-8 text-[#0466C8]" />,
-    title: "Know Where Every Naira Goes",
+    title: "Budget Tracking",
     description:
       "Track spending, set budgets, and gain full control of your finances. No stress, just clarity.",
     buttonText: 'Track Your Budget',
@@ -49,7 +49,7 @@ const features = [
     icon: <Shield className="w-8 h-8 text-[#0466C8]" />,
     title: "Bank-level Security",
     description:
-      "Enjoy top-tier encryption and secure transactions. With Savenest, your savings are protected 24/7. Peace of mind becomes standard.",
+      "Your personal information is encrypted and transactions are safe and secure.",
     buttonText: 'Secure Your Savings',
     link: '/join',
   },
@@ -61,14 +61,14 @@ export default function FeaturesSection() {
       {/* Header */}
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-[#0466C8] font-poppins">
-          Join in Minutes- Quick, simple signup.
+          Modern 'Ajo' made easy and enjoyable <br /> for you
         </h2>
-        <p className="mt-4 text-lg text-gray-600 font-spacegrotesk max-w-2xl mx-auto">
-          Set Your Goal- Emergency fund, travel, future dreams.<br /> Save Together - Watch progress grow with your community.
+        <p className="mt-4 text-2xl text-gray-500 font-spacegrotesk max-w-2xl mx-auto">
+          Save smart with like-minded individuals
         </p>
 
         <div className="flex justify-center">
-          <button className="mt-6 bg-[#FBBF24] text-black py-2 px-4 font-grotesk font-bold rounded-full">
+          <button className="mt-8 bg-[#FBBF24] text-black py-2 px-4 font-grotesk font-bold rounded-full">
             Start My Journey
           </button>
         </div>
@@ -92,7 +92,7 @@ export default function FeaturesSection() {
             </h3>
 
             {/* Description */}
-            <p className="mt-2 text-gray-600 font-spacegrotesk text-sm">
+            <p className="mt-2 text-gray-800 font-spacegrotesk text-sm">
               {feature.description}
             </p>
 
