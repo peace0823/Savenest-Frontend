@@ -61,7 +61,7 @@ export default function FeaturesSection() {
       {/* Header */}
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-[#0466C8] font-poppins">
-          Modern 'Ajo' made easy and enjoyable <br /> for you
+          {`Modern 'Ajo' made easy and enjoyable`} <br /> for you
         </h2>
         <p className="mt-4 text-2xl text-gray-500 font-spacegrotesk max-w-2xl mx-auto">
           Save smart with like-minded individuals
