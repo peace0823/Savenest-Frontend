@@ -37,7 +37,7 @@ export default function SavingsPage() {
         <div className="flex justify-center">
           <div className="w-full max-w-md h-64 bg-gray-200 rounded-2xl flex items-center justify-center">
             <span className="text-gray-500 font-spaceGrotesk">
-              <Image src="/images/office-guys.png" className="rounded-2xl"
+              <Image src="/images/welcome.png" className="rounded-2xl"
               alt="office" 
               height={300}
               width={500}
@@ -95,7 +95,7 @@ export default function SavingsPage() {
         <div className="flex justify-center">
           <div className="w-full max-w-md h-64 bg-gray-200 rounded-2xl flex items-center justify-center">
             <span className="text-gray-500 font-spaceGrotesk">
-              <Image src="/images/market-women.png" className="rounded-2xl"
+              <Image src="/images/welcome.png" className="rounded-2xl"
               alt="office" 
               height={300}
               width={500}

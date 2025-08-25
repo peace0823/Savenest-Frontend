@@ -38,7 +38,7 @@ export default function CommunityPage() {
         <div className="flex justify-center">
           <div className="w-full max-w-md h-64 bg-gray-200 rounded-2xl flex items-center justify-center">
             <span className="text-gray-500 font-spaceGrotesk">
-              <Image src="/images/ajo1.png" className="rounded-3xl"
+              <Image src="/images/welcome.png" className="rounded-3xl"
               alt="ajo1"
               height={400}
               width={500}
@@ -96,7 +96,7 @@ export default function CommunityPage() {
         <div className="flex justify-center order-1 md:order-none">
           <div className="w-full max-w-md h-64 bg-gray-200 rounded-2xl flex items-center justify-center">
             <span className="text-gray-500 font-spaceGrotesk">
-              <Image src="/images/ajo2.png" className="rounded-3xl"
+              <Image src="/images/welcome.png" className="rounded-3xl"
               alt="ajo1"
               height={400}
               width={500}
