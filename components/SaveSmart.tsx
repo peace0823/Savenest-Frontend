@@ -1,13 +1,13 @@
 "use client";
 
-import { FaRocket } from "react-icons/fa"; // rocket icon
+import { RocketIcon } from "lucide-react";// rocket icon
 
 export default function SaveSmart() {
   return (
     <section className="bg-[#F9FAFB] py-20 flex justify-center">
       <div className="max-w-3xl text-center px-4">
         {/* Rocket Icon */}
-        <FaRocket className="text-[] text-6xl mx-auto mb-6" />
+        <RocketIcon className="text-[] text-6xl mx-auto mb-6" />
 
         {/* Heading */}
         <h1 className="text-4xl font-bold font-poppins text-[#0466C8] mb-4">

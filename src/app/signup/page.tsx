@@ -11,6 +11,7 @@ export default function SignUpPage() {
   const [step1, setStep1] = useState(true)
   const [step2, setStep2] = useState(false)
   const [step3, setStep3] = useState(false)
+  
   return (
     <section className="w-full justify-center items-center px-4 sm:px-6 lg:px-8">
       <div className="w-full flex justify-center items-center px-4 sm:px-6 lg:px-8">
@@ -27,17 +28,6 @@ export default function SignUpPage() {
               <span className="text-xl font-bold font-[Poppins] text-[#1F299C]">Savenest</span>
             </Link>
           </div>
-
-          {/* Right side - Text content
-          <Link href="/signin" className="flex-1 text-right space-x-2">
-            <span className="mt-6 text-sm md:text-md text-soft-off text-black font-grotesk ">
-              Already have an account? <br />
-              Get back in your nest!
-            </span>
-          </Link>
-          */}
-          
-
         </div>
       </div>
       {
