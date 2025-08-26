@@ -64,10 +64,10 @@ export default function Footer() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
                         <nav className="flex flex-wrap justify-center sm:justify-start gap-4 text-sm text-slate-600">
-                            <a href="#" className="hover:underline">About us</a>
-                            <a href="#" className="hover:underline">Discover</a>
-                            <a href="#" className="hover:underline">Explore</a>
-                            <a href="#" className="hover:underline">Books</a>
+                            <a href="#" className="hover:underline md:text-1xl font-black">About us</a>
+                            <a href="#" className="hover:underline md:text-1xl font-black">Discover</a>
+                            <a href="#" className="hover:underline md:text-1xl font-black">Explore</a>
+                            <a href="#" className="hover:underline md:text-1xl font-black">Books</a>
                         </nav>
                         <div className="flex justify-center sm:justify-end gap-6">
                             {/* Social Icons */}
@@ -103,10 +103,10 @@ export default function Footer() {
 
                     {/* Legal Section */}
                     <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
-                        <div>© {new Date().getFullYear()} Savenest. All rights reserved.</div>
+                        <div className="xl:text-1xl font-black">© {new Date().getFullYear()} Savenest. All rights reserved.</div>
                         <div className="flex gap-4">
-                            <a href="#" className="hover:underline">Terms of Service</a>
-                            <a href="#" className="hover:underline">Privacy Policy</a>
+                            <a href="#" className="hover:underline xl:text-1xl font-black">Terms of Service</a>
+                            <a href="#" className="hover:underline xl:text-1xl font-black">Privacy Policy</a>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Space_Grotesk } from "next/font/google";
 import "./globals.css"
+import { SidebarProvider } from "@/context/SidebarContext";
 
 const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700'],
@@ -32,7 +33,9 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.className} ${poppins.className} antialiased`}
       >
-        {children}
+        <SidebarProvider>
+          {children}
+        </SidebarProvider>
       </body>
     </html>
   );

@@ -30,35 +30,21 @@ export default function SigninPage() {
               <span className="text-xl font-bold text-[#1F299C] font-[Poppins]">Savenest</span>
             </Link>
           </div>
-
-            
-          {/* Right side - Text content 
-          <Link href="/signup" className="flex-1 text-right space-x-2">
-            <span className="mt-6 text-sm md:text-md text-soft-off text-black font-grotesk">
-              Don&apos;t have an account? <br />
-              Create one in 60 seconds!
-            </span>
-          </Link>
-          */}
-
-
-
-
         </div>
       </div>
       <div className="w-full h-screen flex justify-center items-center px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-7xl rounded-3xl flex flex-col lg:flex-row items-center gap-20">
           {/* Left side */}
           <div className="w-full max-w-7xl md:w-[60%] flex flex-col items-start justify-center p-10 relative">
-            <h1 className="text-6xl md:text-6xl font-semi-bold text-[#1F299C] font-poppins">
+            <h1 className="text-6xl md:text-6xl font-black text-[#1F299C] font-grotesk">
               Login to Your Nest
             </h1>
             <>
-              <p className="mt-6 text-lg md:text-xl text-soft-off text-black font-grotesk max-w-lg">
+              <p className="mt-6 text-lg md:text-2xl font-black text-soft-off text-black font-grotesk max-w-lg">
                 Fill in all your details to log in to your account.
               </p>
 
-              <ul className="mt-6 space-y-3 text-sm text-gray-700 max-w-md font-grotesk">
+              <ul className="mt-6 space-y-3 text-sm md:text-lg text-gray-900 max-w-md font-black font-grotesk">
                 <li className="flex items-start">
                   <span className="mr-3 text-[#1F299C] font-bold">✓</span>
                   <span>Fast setup — get started in less than a minute.</span>
@@ -76,7 +62,7 @@ export default function SigninPage() {
               <div className="mt-6">
                 <Link
                   href="/signup"
-                  className="text-md text-[#1F299C] font-semibold hover:underline font-grotesk"
+                  className="text-md text-[#1F299C] font-bold hover:underline font-grotesk"
                 >
                   Don&apos;t have an account? <br />Create one in 60 seconds
                 </Link>
@@ -92,7 +78,7 @@ export default function SigninPage() {
               className="w-full max-w-xl border border-[#0466C8] rounded-xl p-8 shadow-md m-6"
             >
               <div className="self-start align-top max-w-lg flex flex-col gap-2 lg:py-4 mb-5">
-                <p className="text-lg flex-1 xl:text-xl text-soft-off text-[#1F299C] font-grotesk">
+                <p className="text-lg flex-1 xl:text-2xl font-black text-soft-off text-[#1F299C] font-grotesk">
                   Enter Your Details
                 </p>
 
@@ -128,7 +114,7 @@ export default function SigninPage() {
               <div className="text-right mt-3">
                 <Link
                   href="/forgot-password"
-                  className="text-sm text-[#0466C8] hover:underline"
+                  className="text-sm font-black md:text-1xl text-[#0466C8] hover:underline"
                 >
                   Forgot Password?
                 </Link>
