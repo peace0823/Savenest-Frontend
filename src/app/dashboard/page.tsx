@@ -192,6 +192,45 @@ export default function Dashboard() {
               <div className="mt-4 h-48 rounded-lg border border-[#0466C8]/30 bg-[#F9FAFB]" />
             </aside>
           </section>
+
+
+{/* Quick Action Cards Section */}
+<section className="mt-10">
+  <h2 className="text-base sm:text-lg font-semibold text-[#101010] font-poppins mb-4">
+    Quick Actions
+  </h2>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+    {[
+      { title: "Fund Account", description: "Top up your wallet instantly" },
+      { title: "Transfer", description: "Send money to anyone" },
+      { title: "Transaction History", description: "View your past transactions" },
+      { title: "Exchange Rate", description: "Check current FX rates" },
+      { title: "Buy Air Time", description: "Recharge your phone easily" },
+      { title: "Buy Data", description: "Stay connected with data bundles" },
+    ].map((card, i) => (
+      <button
+        key={i}
+        className="
+          text-left
+          rounded-xl bg-white border border-[#0466C8]/40 p-4
+          hover:shadow-md hover:cursor-pointer transition
+          focus:outline-none focus:ring-2 focus:ring-[#0466C8]
+          flex flex-col justify-between
+        "
+        onClick={() => console.log(`${card.title} clicked`)} // Replace with actual handler
+      >
+        <h3 className="text-sm sm:text-base font-semibold text-[#101010] font-poppins mb-2">
+          {card.title}
+        </h3>
+        <p className="text-xs text-[#101010]/70 font-grotesk">
+          {card.description}
+        </p>
+      </button>
+    ))}
+  </div>
+</section>
+
         </main>
         {/* Page Content Ends Here */}
       </div>
