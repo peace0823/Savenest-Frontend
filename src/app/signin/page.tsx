@@ -5,14 +5,70 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import apiManager from "../../../apiManager";
+import { toast } from 'react-toastify';
 
 export default function SigninPage() {
   const router = useRouter();
 
-  const handleLogin = () => {
-    // In production, add auth validation here
-    router.push("/dashboard"); // Redirect to dashboard after login
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
+
+  const loginAction = (email: String, password: String) => {
+    const result = apiManager('/api/auth/login', {
+      method: 'POST',
+      data: {
+        email,
+        password
+      }
+    })
+    setLoading(false)
+    return result
+  }
+
+
+  const handleLogin = (email: String, password: String) => {
+    // add auth validation here
+    setLoading(true);
+    console.log("Attempting login for:", email);
+
+
+    console.log(loading);
+    // Call API
+    loginAction(email, password)
+      .then(() => {
+        setSuccess(true);
+      })
+      .catch((error) => {
+
+        setError(error);
+      });
   };
+
+  useEffect(() => {
+    if (success) {
+      // Call Toastify to show success message
+      toast.success("Login successful!");
+
+      setTimeout(() => {
+        // Redirect to dashboard after login
+        router.push("/dashboard");
+      }, 2000);
+    }
+
+    if (error) {
+      // console.error("Login error:", error);
+      // Call Toastify to show wrong message
+      toast.error("Login failed!");
+    }
+
+  }, [success, error]);
+
 
   return (
     <section className="w-fullustify-center items-center px-4 sm:px-6 lg:px-8">
@@ -90,6 +146,7 @@ export default function SigninPage() {
                   type="email"
                   placeholder="janedoe@gmail.com"
                   className="w-full p-5 border rounded-xl bg-[#F3F4F6] border-[#343fb4] focus:outline-none focus:ring-2 focus:ring-[#1F299C] focus:border-transparent"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
 
@@ -99,15 +156,16 @@ export default function SigninPage() {
                   type="password"
                   placeholder="********"
                   className="w-full p-5 border rounded-xl bg-[#F3F4F6] border-[#343fb4] focus:outline-none focus:ring-2 focus:ring-[#1F299C] focus:border-transparent"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
 
               {/* Login button */}
               <button
-                onClick={handleLogin}
-                className="w-full bg-[#1F299C] hover:bg-[#343fb4] text-white font-bold py-3 rounded-full transition mt-5"
+                onClick={() => handleLogin(email, password)}
+                className="w-full bg-[#1F299C] hover:bg-[#343fb4] text-white font-bold py-3 rounded-full transition mt-5" disabled={loading || !email || !password}
               >
-                Login
+                {loading ? "Loading" : "Login"}
               </button>
 
               {/* Forgot password */}

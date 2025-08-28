@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Space_Grotesk } from "next/font/google";
 import "./globals.css"
 import { SidebarProvider } from "@/context/SidebarContext";
+import { ToastContainer } from 'react-toastify';
 
 const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700'],
@@ -36,6 +37,18 @@ export default function RootLayout({
         <SidebarProvider>
           {children}
         </SidebarProvider>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </body>
     </html>
   );
