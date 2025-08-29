@@ -1,9 +1,13 @@
+import Footer from "../../../components/Footer";
+import Navbar from "../../../components/Navbar";
+
 // app/contact/page.tsx
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-[#F9FAFB] text-[#101010]">
+      <Navbar />
       {/* Header */}
-      <div className="text-center py-12 bg-[#1F299C] text-white">
+      <div className="text-center py-40 bg-[#1F299C] text-white">
         <h1 className="text-4xl font-bold font-poppins">Contact Savnest</h1>
         <p className="mt-3 text-lg font-space">
           We d love to hear from you. Reach out and let s build financial freedom together.
@@ -73,9 +77,10 @@ export default function ContactPage() {
       </div>
 
       {/* Footer Note */}
-      <div className="text-center py-6 bg-[#1F299C] text-white font-space">
+      <Footer />
+      {/* <div className="text-center py-6 bg-[#1F299C] text-white font-space">
         <p>© {new Date().getFullYear()} Savnest. All rights reserved.</p>
-      </div>
+      </div> */}
     </div>
   );
 }

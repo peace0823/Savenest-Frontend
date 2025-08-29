@@ -1,18 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import apiManager from "../apiManager"; // ✅ Axios instance
-import { toast } from "react-toastify";   // ✅ Toast notifications
+import apiManager from "../apiManager";
+import { toast } from "react-toastify";
+import { TailSpin } from "react-loading-icons";
 
-export default function VerifyEmailSection({
-  nextStep,
-  onNext,
-}: {
-  nextStep?: () => void;
-  onNext: () => void;
-}) {
+export default function VerifyEmailSection({ nextStep, onNext, }: { nextStep?: () => void; onNext: () => void; }) {
   const [otp, setOtp] = useState<string>("");
   const [loading, setLoading] = useState(false); // ✅ Track loading state
 
@@ -115,10 +109,15 @@ export default function VerifyEmailSection({
             </button>
             <button
               onClick={handleVerifyCode}
-              className="self-end mt-4 py-3 px-8 bg-[#1F299C] rounded-3xl text-white hover:bg-[#343fb4] focus:outline-none focus:ring-2 focus:ring-[#1F299C] focus:ring-opacity-50"
+              className="self-end mt-4 py-3 px-8 bg-[#1F299C] hover:bg-[#343fb4] rounded-3xl text-white focus:outline-none focus:ring-2 focus:ring-[#1F299C] focus:ring-opacity-50  disabled:opacity-60"
               disabled={loading || !otp}
             >
-              {loading ? "Verifying..." : "Verify Email"}
+              {loading ? <span
+                className="w-5 mx-auto h-full justify-center flex"
+                style={{ height: "calc(2.7vh)" }}
+              >
+                <TailSpin stroke="#fff" strokeWidth="4" color="#fff" />
+              </span> : "Verify Email"}
             </button>
           </div>
         </motion.div>

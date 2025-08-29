@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useSidebar } from "../context/SidebarContext";
-import { BoxIcon, CalendarIcon, ChevronDownIcon, DotIcon, GridIcon, ListIcon, PackageIcon, PieChartIcon, PlugIcon, TableIcon, UserCircleIcon } from "lucide-react";
+import { ChevronDownIcon, DotIcon, GridIcon, PackageIcon, PlugIcon, UserCircleIcon } from "lucide-react";
 import SidebarWidget from "./SidebarWidget";
 
 
@@ -21,54 +21,28 @@ const navItems: NavItem[] = [
     name: "Dashboard",
     path: "/dashboard",
   },
-  {
-    icon: <CalendarIcon />,
-    name: "Calendar",
-    path: "/calendar",
-  },
-  {
+   {
     icon: <UserCircleIcon />,
     name: "User Profile",
     path: "/profile",
   },
-
-  {
-    name: "Forms",
-    icon: <ListIcon />,
-    subItems: [{ name: "Form Elements", path: "/form-elements", pro: false }],
-  },
-  {
-    name: "Tables",
-    icon: <TableIcon />,
-    subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
-  },
-  {
-    name: "Pages",
-    icon: <PackageIcon />,
-    subItems: [
-      { name: "Blank Page", path: "/blank", pro: false },
-      { name: "404 Error", path: "/error-404", pro: false },
-    ],
-  },
+  
 ];
 
 const othersItems: NavItem[] = [
+
   {
-    icon: <PieChartIcon />,
-    name: "Charts",
-  },
-  {
-    icon: <BoxIcon />,
-    name: "UI Elements",
+    icon: <PlugIcon />,
+    name: "Settings",
     subItems: [
-      { name: "Alerts", path: "/alerts", pro: false },
+      { name: "Sign In", path: "/signin", pro: false },
     ],
   },
   {
-    icon: <PlugIcon />,
-    name: "Authentication",
+    name: "Security",
+    icon: <PackageIcon />,
     subItems: [
-      { name: "Sign In", path: "/signin", pro: false },
+      { name: "Password Reset", path: "/blank", pro: false },
     ],
   },
 ];
@@ -303,7 +277,7 @@ const AppSidebar: React.FC = () => {
           )}
         </Link>
       </div>
-      <div className="flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar">
+      <div className="flex flex-col overflow-y-auto duration-300 ease-linear flex-1 justify-between no-scrollbar">
         <nav className="mb-6">
           <div className="flex flex-col gap-4 ">
             <div>

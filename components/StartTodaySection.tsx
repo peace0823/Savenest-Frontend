@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { RocketIcon } from "lucide-react";
 
 export default function StartTodaySection() {

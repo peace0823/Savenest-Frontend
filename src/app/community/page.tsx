@@ -2,10 +2,14 @@
 
 import Image from "next/image";
 import Navbar from "../../../components/Navbar";
+import Footer from "../../../components/Footer";
 
 export default function CommunityPage() {
   return (
     <main className="bg-[#F9FAFB] min-h-screen">
+      {/* Navbar */}
+      <Navbar />
+
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-6 py-16 text-center mt-15">
         <h1 className="text-4xl md:text-5xl font-bold font-poppins text-[#1F299C]">
@@ -120,7 +124,8 @@ export default function CommunityPage() {
         </div>
       </section>
 
-      <Navbar />
+      {/* Footer */}
+      <Footer />
     </main>
   );
 }

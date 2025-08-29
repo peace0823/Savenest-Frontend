@@ -2,18 +2,13 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import apiManager from "../apiManager"; // Axios instance
 import { toast } from "react-toastify";   // Toast notifications
 import { useRouter } from "next/navigation"; // For redirecting after signup
+import { TailSpin } from "react-loading-icons";
 
-export default function RegisterFormSection({
-  nextStep,
-  onNext,
-}: {
-  nextStep?: () => void;
-  onNext: () => void;
-}) {
+export default function RegisterFormSection({ }: { nextStep?: () => void; onNext: () => void; }) {
   const router = useRouter();
 
   // Form fields
@@ -26,6 +21,7 @@ export default function RegisterFormSection({
   const [referral, setReferral] = useState("");
 
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
 
   // Validation logic
@@ -60,11 +56,8 @@ export default function RegisterFormSection({
         referralCode: referral,
       });
 
-      toast.success("Account created successfully!");
+      setSuccess(true)
 
-      setTimeout(() => {
-        router.push("/signin");
-      }, 2000);
     } catch (error) {
       toast.error("Signup failed");
       console.error("Signup error:", error);
@@ -72,6 +65,18 @@ export default function RegisterFormSection({
       setLoading(false);
     }
   }
+
+  useEffect(() => {
+    if (!success) return;
+    toast.success("Account created successfully!");
+    setSuccess(false);
+
+    setTimeout(() => {
+      // Redirect to dashboard after login
+      router.push("/dashboard");
+    }, 700);
+  }, [success, router]);
+
 
   return (
     <div className="w-full h-screen flex justify-center items-center px-4 sm:px-6 lg:px-8">
@@ -229,10 +234,15 @@ export default function RegisterFormSection({
             <div className="md:col-span-2 flex justify-end">
               <button
                 type="submit"
-                className="mt-4 py-3 px-8 bg-[#1F299C] rounded-3xl text-white hover:bg-[#343fb4] focus:outline-none focus:ring-2 focus:ring-[#1F299C] focus:ring-opacity-50"
+                className="mt-4 py-3 px-8 bg-[#1F299C] hover:bg-[#343fb4] rounded-3xl text-white  focus:outline-none focus:ring-2 focus:ring-[#1F299C] focus:ring-opacity-50  disabled:opacity-60"
                 disabled={loading}
               >
-                {loading ? "Creating Account..." : "Create Account"}
+                {loading ? <span
+                  className="w-5 mx-auto h-full justify-center flex"
+                  style={{ height: "calc(2.7vh)" }}
+                >
+                  <TailSpin stroke="#fff" strokeWidth="4" color="#fff" />
+                </span> : "Create Account"}
               </button>
             </div>
           </form>

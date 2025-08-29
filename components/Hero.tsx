@@ -10,7 +10,7 @@ export default function Hero() {
     <section className="pt-30 w-full flex justify-center items-center px-4 sm:px-6 lg:px-8 py-12">
       {/* Blue rectangle container */}
       <div className="bg-[#1F299C] overflow-hidden w-full max-w-7xl rounded-3xl p-8 lg:p-16 flex flex-col lg:flex-row items-center gap-8">
-        
+
         {/* Left side - Text Content */}
         <div className="flex-1 text-left">
           {/* Headline */}
