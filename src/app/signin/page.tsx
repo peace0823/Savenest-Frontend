@@ -20,7 +20,7 @@ export default function SigninPage() {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
 
-  const loginAction = async (email: String, password: String) => {
+  const loginAction = async (email: string, password: string) => {
     const result = await apiManager('/api/auth/login', {
       method: 'POST',
       data: {
@@ -33,7 +33,7 @@ export default function SigninPage() {
   }
 
 
-  const handleLogin = (email: String, password: String) => {
+  const handleLogin = (email: string, password: string) => {
     // add auth validation here
     setLoading(true);
 
@@ -67,7 +67,7 @@ export default function SigninPage() {
       setError(null); // Reset error state
     }
 
-  }, [success, error]);
+  }, [success, error, router]);
 
 
   return (
