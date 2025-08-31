@@ -1,3 +1,6 @@
+# ------------------------------
+# Origin Access Control
+# ------------------------------
 resource "aws_cloudfront_origin_access_control" "cloudfront" {
   name                              = "cloudfront-oac"
   description                       = "CloudFront Origin Access Control for S3"
@@ -6,6 +9,9 @@ resource "aws_cloudfront_origin_access_control" "cloudfront" {
   signing_protocol                  = "sigv4"
 }
 
+# ------------------------------
+# CloudFront Distribution
+# ------------------------------
 resource "aws_cloudfront_distribution" "savenest_frontend" {
   origin {
     domain_name              = var.bucket_regional_domain_name
@@ -32,23 +38,26 @@ resource "aws_cloudfront_distribution" "savenest_frontend" {
         forward = "none"
       }
     }
-  function_association {
+
+    # Rewrite function to handle SPA routes
+    function_association {
       event_type   = "viewer-request"
       function_arn = aws_cloudfront_function.rewrite_index.arn
+    }
   }
-  }
+
+  # Important: serve index.html on errors (prevents AccessDenied/404 issues in SPA)
   custom_error_response {
-    error_code = 404
-    response_code = 200
-    response_page_path = "/index.html"
-
- }
- custom_error_response {
-    error_code = 403
-    response_code = 200
+    error_code         = 404
+    response_code      = 200
     response_page_path = "/index.html"
   }
 
+  custom_error_response {
+    error_code         = 403
+    response_code      = 200
+    response_page_path = "/index.html"
+  }
 
   price_class = "PriceClass_200"
 
@@ -68,10 +77,9 @@ resource "aws_cloudfront_distribution" "savenest_frontend" {
   }
 }
 
-##=====================================================================================
-# POLICY FOR CLOUDFRONT TO ACCESS S3 BUCKET....
-##========================================================================================
-
+# ------------------------------
+# S3 Bucket Policy (for CloudFront access)
+# ------------------------------
 resource "aws_s3_bucket_policy" "cloudfront_access" {
   bucket = var.bucket_name
 
@@ -86,7 +94,6 @@ resource "aws_s3_bucket_policy" "cloudfront_access" {
         },
         Action   = "s3:GetObject",
         Resource = "${var.bucket_arn}/*",
-
         Condition = {
           StringEquals = {
             "AWS:SourceArn" = aws_cloudfront_distribution.savenest_frontend.arn
@@ -96,6 +103,10 @@ resource "aws_s3_bucket_policy" "cloudfront_access" {
     ]
   })
 }
+
+# ------------------------------
+# CloudFront Function
+# ------------------------------
 resource "aws_cloudfront_function" "rewrite_index" {
   name    = "rewrite_index"
   runtime = "cloudfront-js-1.0"
@@ -105,24 +116,23 @@ resource "aws_cloudfront_function" "rewrite_index" {
 
   code = <<-EOT
     function handler(event) {
-    var req = event.request;
-    var uri = req.uri;
+      var req = event.request;
+      var uri = req.uri;
 
-    // 1) If this is an asset under /_next/, let it pass through
-    if (uri.startsWith('/_next/')) {
+      // 1) If this is an asset under /_next/, let it pass through
+      if (uri.startsWith('/_next/')) {
+        return req;
+      }
+
+      // 2) If it ends in a file extension (e.g. .css, .js, .svg, .png, .jpg), let it pass through
+      if (uri.match(/\\/[^\\/]+\\.[^\/]+$/)) {
+        return req;
+      }
+
+      // 3) Otherwise treat it as a SPA route: drop trailing slash and serve index.html
+      var base = uri.endsWith('/') ? uri.slice(0, -1) : uri;
+      req.uri = base + '/index.html';
       return req;
     }
-
-    // 2) If it ends in a file extension (e.g. .css, .js, .svg), let it pass through
-    if (uri.match(/\/[^/]+\.[^/]+$/)) {
-      return req;
-    }
-
-    // 3) Otherwise treat it as a "page" route: drop any trailing slash
-    //    and serve the folder's index.html
-    var base = uri.endsWith('/') ? uri.slice(0, -1) : uri;
-    req.uri = base + '/index.html';
-    return req;
-}
- EOT
+  EOT
 }
