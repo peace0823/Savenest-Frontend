@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "Savenest",
   description: "Savenest. Save Together. Live Better.",
   keywords: ["savings", "community", "finance", "budgeting", "nest egg"],
-  icons: { icon: "/image/Logo-blue2.png" },
+  icons: { icon: "/images/Logo-blue2.png" },
 };
 
 export default function RootLayout({
@@ -29,9 +29,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" type="image/x-icon" href="../public/images/Logo-blue2.png" />
-      </head>
       <body
         className={`${spaceGrotesk.className} ${poppins.className} antialiased`}
       >
