@@ -13,13 +13,13 @@ export default function StartTodaySection() {
 
                 {/* Headline */}
                 <h1 className="text-4xl md:text-5xl font-bold text-soft-off text-black font-poppins leading-tight text-center">
-                    Everything You need to save smart
+                    Everything you need to kick-start your savings journey with Nesty.
                 </h1>
 
                 {/* Sub-headline */}
-                <p className="mt-6 text-lg md:text-xl w-full text-soft-off text-[#0466C8] font-grotesk text-center">
+                {/* <p className="mt-6 text-lg md:text-xl w-full text-soft-off text-[#0466C8] font-grotesk text-center">
                     Ready to kickstart your savings journey with Nesty?
-                </p>
+                </p> */}
 
                 <div className=" flex justify-center items-center">
                     <button className="mt-8 bg-[#FBBF24] text-black py-2 px-4 font-grotesk font-bold rounded-lg">

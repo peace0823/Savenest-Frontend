@@ -15,10 +15,10 @@ const features = [
   },
   {
     icon: <Sparkles className="w-8 h-8 text-[#0466C8]" />,
-    title: "Savings Companion",
+    title: "Payment method",
     description:
-      "Meet a smart accountability partner that makes saving both inspiring and motivating, enabling you to develop financial discipline.",
-    buttonText: 'Meet Your Companion',
+      "Use your debit card or a bank transfer, setup your first plan.",
+    buttonText: 'Start Saving',
     link: '/join',
   },
   {
@@ -33,7 +33,7 @@ const features = [
     icon: <Gamepad2 className="w-8 h-8 text-[#0466C8]" />,
     title: "Savings doesn't have to be boring.",
     description:
-      "Engaging in our games is fun, relieves you of stress, improves your problem-solving skills, and leaves you excited and motivated to save.",
+      "Challenge yourself to save better with the help of some healthy competition with friends while Nesty helps you maintain your winning streak.",
     buttonText: 'Take the Challenge',
     link: '/join',
   },
@@ -83,15 +83,14 @@ export default function FeaturesSection() {
       {/* Header */}
       <div
         ref={headerRef}
-        className={`text-center mb-12 transition-all duration-700 ease-out transform ${
-          headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
+        className={`text-center mb-12 transition-all duration-700 ease-out transform ${headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
       >
         <h2 className="text-3xl md:text-4xl font-bold text-[#0466C8] font-poppins">
-          Community savings made easy and enjoyable <br /> for you
+          Automated Savings
         </h2>
-        <p className="mt-4 text-2xl text-gray-500 font-spacegrotesk max-w-2xl mx-auto">
-          Save smart with like-minded individuals
+        <p className="mt-4 text-2xl text-gray-500 font-spacegrotesk max-w-4xl mx-auto">
+          Start saving with as little as ₦100. Choose your savings plan:daily, weekly or monthly with an interest rate of 2% paid daily. Save on your own terms.
         </p>
 
         <div className="flex justify-center">
@@ -114,9 +113,8 @@ export default function FeaturesSection() {
               style={{
                 transitionDelay: isVisible ? `${index * 150}ms` : "0ms",
               }}
-              className={`border-2 border-[#0466C8] rounded-2xl p-6 flex flex-col transition-all duration-700 ease-out transform ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
+              className={`border-2 border-[#0466C8] rounded-2xl p-6 flex flex-col transition-all duration-700 ease-out transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
             >
               {/* Icon */}
               <div className="mb-4">{feature.icon}</div>

@@ -15,12 +15,12 @@ export default function Hero() {
         <div className="flex-1 text-left">
           {/* Headline */}
           <h1 className="text-4xl md:text-5xl font-bold text-white font-poppins leading-tight">
-            Save Money <br /> Together
+            Save money together<br />as a team
           </h1>
 
           {/* Sub-headline */}
           <p className="mt-6 text-lg md:text-xl text-white font-grotesk max-w-lg">
-            Savenest helps you build financial stability through group savings, personal coaching, and simple tools—right from your phone
+            Savenest: Smartest ways to smash your savings goals against all odds.
           </p>
 
           {/* Email input and CTA */}
