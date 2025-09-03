@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
         </Link>
 
         {/* CENTER: Desktop Menu */}
-        <div className="hidden md:flex space-x-8 font-[Poppins]">
+        <div className="hidden md:flex space-x-8 font-[Poppins] ">
           <NavLink href="/" label="Home" />
           <NavLink href="/community" label="Community" />
           <NavLink href="/savings" label="Savings" />

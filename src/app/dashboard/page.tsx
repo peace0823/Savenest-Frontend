@@ -54,11 +54,11 @@ export default function Dashboard() {
           {/* Welcome header */}
           <header className="mb-8">
             {/* Primary heading (Poppins) */}
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#1F299C] font-poppins">
+            <h1 className="text-2xl sm:text-4xl font-bold text-[#1F299C] font-poppins">
               Welcome Back, Linda
             </h1>
             {/* Supporting line (Space Grotesk) */}
-            <p className="mt-1 text-sm text-[#101010]/70 font-grotesk">
+            <p className="mt-1 text-2xl text-[#101010]/70 font-grotesk">
               You’re doing great with your savings journey
             </p>
           </header>
@@ -71,11 +71,11 @@ export default function Dashboard() {
                 className="rounded-xl bg-white border border-[#0466C8] p-5 flex flex-col items-center justify-center hover:shadow-md transition"
               >
                 {/* Big number */}
-                <div className="text-lg sm:text-xl font-bold text-[#101010] font-poppins">
+                <div className="text-lg sm:text-2xl font-bold text-[#101010] font-poppins">
                   {s.value}
                 </div>
                 {/* Label */}
-                <div className="mt-1 text-xs sm:text-sm text-[#101010]/70 font-grotesk text-center">
+                <div className="mt-1 text-xs sm:text-2xl text-[#101010]/70 font-grotesk text-center">
                   {s.label}
                 </div>
               </div>
@@ -88,7 +88,7 @@ export default function Dashboard() {
             <div className="lg:col-span-2 rounded-xl bg-white border border-[#0466C8]">
               {/* Card header */}
               <div className="flex items-center justify-between px-5 sm:px-6 py-4 border-b border-[#0466C8]/40">
-                <h2 className="text-base sm:text-lg font-semibold text-[#101010] font-poppins">
+                <h2 className="text-base sm:text-2xl font-semibold text-[#101010] font-poppins">
                   Your Savings Goals
                 </h2>
                 {/* Secondary CTA (Bright Orange) */}
@@ -220,10 +220,10 @@ export default function Dashboard() {
         "
         onClick={() => console.log(`${card.title} clicked`)} // Replace with actual handler
       >
-        <h3 className="text-sm sm:text-base font-semibold text-[#101010] font-poppins mb-2">
+        <h3 className="text-sm sm:text-xl font-semibold text-[#101010] font-poppins mb-2">
           {card.title}
         </h3>
-        <p className="text-xs text-[#101010]/70 font-grotesk">
+        <p className="text-sm text-[#101010]/70 font-grotesk">
           {card.description}
         </p>
       </button>

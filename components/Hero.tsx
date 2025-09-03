@@ -14,12 +14,12 @@ export default function Hero() {
         {/* Left side - Text Content */}
         <div className="flex-1 text-left">
           {/* Headline */}
-          <h1 className="text-4xl md:text-5xl font-bold text-white font-poppins leading-tight">
-            Save money together<br />as a team
+          <h1 className="text-4xl md:text-7xl font-bold text-white font-poppins leading-tight">
+            Save Money Together<br />as a Team
           </h1>
 
           {/* Sub-headline */}
-          <p className="mt-6 text-lg md:text-xl text-white font-grotesk max-w-lg">
+          <p className="mt-6 text-lg md:text-2xl text-gray-100 font-grotesk max-w-lg">
             Savenest: Smartest ways to smash your savings goals against all odds.
           </p>
 

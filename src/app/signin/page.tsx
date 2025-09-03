@@ -20,24 +20,24 @@ export default function SigninPage() {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
 
-  const loginAction = async (email: string, password: string) => {
-    const result = await apiManager('/api/auth/login', {
-      method: 'POST',
+ const loginAction = async (email: string, password: string) => {
+   const result = await apiManager('/api/auth/login', {
+     method: 'POST',
       data: {
-        email,
+       email,
         password
-      }
-    })
+     }
+   })
     setLoading(false)
-    return result
-  }
+   return result
+ }
 
 
   const handleLogin = (email: string, password: string) => {
     // add auth validation here
     setLoading(true);
 
-    // Call API
+     //Call API
     loginAction(email, password)
       .then(() => {
         setLoading(false);
@@ -49,22 +49,22 @@ export default function SigninPage() {
       });
   };
 
-  useEffect(() => {
+   useEffect(() => {
     if (success) {
       // Call Toastify to show success message
-      toast.success("Login successful!");
+   toast.success("Login successful!");
 
-      setTimeout(() => {
+     setTimeout(() => {
         // Redirect to dashboard after login
-        router.push("/dashboard");
-        setSuccess(false); // Reset success state
-      }, 700);
-    }
+       router.push("/dashboard");
+       setLoading(false); // Reset success state
+     }, 700);
+   }
 
     if (error) {
       // Call Toastify to show wrong message
-      toast.error("Login failed!");
-      setError(null); // Reset error state
+     toast.error("Login failed!");
+     setError(null); // Reset error state
     }
 
   }, [success, error, router]);

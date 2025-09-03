@@ -39,7 +39,7 @@ export default function HowItWorksSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl text-[#0466C8] font-poppins font-bold"
+                        className="text-4xl md:text-7xl text-[#0466C8] font-poppins font-bold"
                     >
                         How Savenest Works
                     </motion.h2>
@@ -49,7 +49,7 @@ export default function HowItWorksSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="mt-4 text-lg md:text-xl text-slate-600 font-grotesk font-semibold"
+                        className="mt-4 text-lg md:text-2xl text-slate-600 font-grotesk font-semibold"
                     >
                         Savenest is a savings app that secures your money with a saving plan of your own choice and also provides you a community that makes saving enjoyable.
                     </motion.p>
@@ -62,10 +62,16 @@ export default function HowItWorksSection() {
                             const reverse = idx % 2 === 1;
                             return (
                                 <motion.div
-                                    key={step.id}
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    className="transition-all duration-300"
+                                    
+                            key={step.id}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.98 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            viewport={{ once: true }}
+                            className="transition-all duration-300"
+
                                 >
                                     <div className={`w-full max-w-7xl rounded-3xl p-8 lg:px-1 flex flex-col lg:flex-row items-center gap-8 ${reverse ? "lg:flex-row-reverse" : ""}`}>
                                         <div className="flex-1">

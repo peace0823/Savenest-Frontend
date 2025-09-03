@@ -86,10 +86,10 @@ export default function FeaturesSection() {
         className={`text-center mb-12 transition-all duration-700 ease-out transform ${headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-[#0466C8] font-poppins">
+        <h2 className="text-5xl md:text-7xl font-bold text-[#0466C8] font-poppins">
           Automated Savings
         </h2>
-        <p className="mt-4 text-2xl text-gray-500 font-spacegrotesk max-w-4xl mx-auto">
+        <p className="mt-4 text-2xl text-gray-700 font-spacegrotesk max-w-4xl mx-auto">
           Start saving with as little as ₦100. Choose your savings plan:daily, weekly or monthly with an interest rate of 2% paid daily. Save on your own terms.
         </p>
 
@@ -120,12 +120,12 @@ export default function FeaturesSection() {
               <div className="mb-4">{feature.icon}</div>
 
               {/* Title */}
-              <h3 className="text-lg font-bold text-[#0466C8] font-poppins">
+              <h3 className="text-2xl font-bold text-[#0466C8] font-poppins">
                 {feature.title}
               </h3>
 
               {/* Description */}
-              <p className="mt-2 text-gray-800 font-spacegrotesk text-sm">
+              <p className="mt-2 text-gray-800 font-spacegrotesk text-xl">
                 {feature.description}
               </p>
 
