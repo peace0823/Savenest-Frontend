@@ -1,5 +1,5 @@
 # ------------------------------
-# Origin Access Control
+# CloudFront Origin Access Control (OAC)
 # ------------------------------
 resource "aws_cloudfront_origin_access_control" "cloudfront" {
   name                              = "cloudfront-oac"
@@ -59,6 +59,12 @@ resource "aws_cloudfront_distribution" "savenest_frontend" {
     response_page_path = "/index.html"
   }
 
+  custom_error_response {
+    error_code         = 500
+    response_code      = 200
+    response_page_path = "/index.html"
+  }
+
   price_class = "PriceClass_200"
 
   viewer_certificate {
@@ -72,7 +78,7 @@ resource "aws_cloudfront_distribution" "savenest_frontend" {
   }
 
   tags = {
-    Environment = "production"
+    Environment = var.environment
     Name        = "Savenest Frontend App"
   }
 }
