@@ -17,3 +17,10 @@ variable "environment" {
   type        = string
   description = "Deployment environment (e.g., dev, prod)"
 }
+# ./modules/cloudfront/variables.tf
+
+variable "s3_files_upload_trigger" {
+  description = "A value that changes when the frontend files are uploaded. Used to trigger CloudFront invalidation."
+  type        = string
+  default     = ""
+}

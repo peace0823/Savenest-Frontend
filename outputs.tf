@@ -1,17 +1,31 @@
-output "frontend_bucket_name" {
-  description = "Name of the S3 bucket used for the frontend"
-  value       = module.s3.bucket_name
-}
+# outputs.tf
 
-output "cloudfront_distribution_url" {
-  description = "URL of the CloudFront distribution"
-  value       = module.cloudfront.cloudfront_url
+output "cloudfront_distribution_arn" {
+  description = "The ARN of the CloudFront distribution"
+  value       = module.cloudfront.cloudfront_distribution_arn
 }
 
 output "cloudfront_distribution_id" {
-  value = module.cloudfront.cloudfront_Id
+  description = "The ID of the CloudFront distribution"
+  value       = module.cloudfront.cloudfront_distribution_id
 }
 
-output "cloudfront_distribution_arn" {
-  value = module.cloudfront.cloudfront_distribution_arn
+output "cloudfront_distribution_url" {
+  description = "The domain name of the CloudFront distribution"
+  value       = module.cloudfront.cloudfront_distribution_url
+}
+
+output "frontend_bucket_name" {
+  description = "The name of the frontend S3 bucket"
+  value       = module.s3.bucket_name
+}
+
+output "cognito_user_pool_id" {
+  description = "Cognito User Pool ID"
+  value       = module.cognito.user_pool_id
+}
+
+output "cognito_client_id" {
+  description = "Cognito Client ID"
+  value       = module.cognito.user_pool_client_id
 }
