@@ -1,5 +1,5 @@
 # ------------------------------
-# Origin Access Control
+# CloudFront Origin Access Control (OAC)
 # ------------------------------
 resource "aws_cloudfront_origin_access_control" "cloudfront" {
   name                              = "cloudfront-oac"
@@ -31,6 +31,11 @@ resource "aws_cloudfront_distribution" "savenest_frontend" {
     min_ttl                = 0
     default_ttl            = 3600
     max_ttl                = 86400
+    
+    function_association {
+    event_type   = "viewer-request"
+    function_arn = aws_cloudfront_function.rewrite_index.arn
+  }
 
     forwarded_values {
       query_string = false
@@ -39,14 +44,14 @@ resource "aws_cloudfront_distribution" "savenest_frontend" {
       }
     }
 
-    # Rewrite function to handle SPA routes
+    
     function_association {
       event_type   = "viewer-request"
       function_arn = aws_cloudfront_function.rewrite_index.arn
     }
   }
 
-  # Important: serve index.html on errors (prevents AccessDenied/404 issues in SPA)
+ 
   custom_error_response {
     error_code         = 404
     response_code      = 200
@@ -55,6 +60,12 @@ resource "aws_cloudfront_distribution" "savenest_frontend" {
 
   custom_error_response {
     error_code         = 403
+    response_code      = 200
+    response_page_path = "/index.html"
+  }
+
+  custom_error_response {
+    error_code         = 500
     response_code      = 200
     response_page_path = "/index.html"
   }
@@ -72,14 +83,11 @@ resource "aws_cloudfront_distribution" "savenest_frontend" {
   }
 
   tags = {
-    Environment = "production"
+    Environment = var.environment
     Name        = "Savenest Frontend App"
   }
 }
 
-# ------------------------------
-# S3 Bucket Policy (for CloudFront access)
-# ------------------------------
 resource "aws_s3_bucket_policy" "cloudfront_access" {
   bucket = var.bucket_name
 
@@ -104,35 +112,51 @@ resource "aws_s3_bucket_policy" "cloudfront_access" {
   })
 }
 
-# ------------------------------
-# CloudFront Function
-# ------------------------------
 resource "aws_cloudfront_function" "rewrite_index" {
   name    = "rewrite_index"
-  runtime = "cloudfront-js-1.0"
-  publish = true
+  runtime = "cloudfront-js-2.0"
+  comment = "SPA routing rewrite function"
+  code    = <<-EOT
+function handler(event) {
+  var req = event.request;
+  var uri = req.uri;
 
-  comment = "Map folder routes to index.html and drop trailing slash"
+  // 1) If this is an asset under /_next/, let it pass through
+  if (uri.startsWith('/_next/')) {
+    return req;
+  }
 
-  code = <<-EOT
-    function handler(event) {
-      var req = event.request;
-      var uri = req.uri;
+  // 2) If it ends in a file extension (e.g. .css, .js, .svg, .png, .jpg), let it pass through
+  if (uri.match(/\/[^\/]+\.[^\/]+$/)) {
+    return req;
+  }
 
-      // 1) If this is an asset under /_next/, let it pass through
-      if (uri.startsWith('/_next/')) {
-        return req;
-      }
-
-      // 2) If it ends in a file extension (e.g. .css, .js, .svg, .png, .jpg), let it pass through
-      if (uri.match(/\\/[^\\/]+\\.[^\/]+$/)) {
-        return req;
-      }
-
-      // 3) Otherwise treat it as a SPA route: drop trailing slash and serve index.html
-      var base = uri.endsWith('/') ? uri.slice(0, -1) : uri;
-      req.uri = base + '/index.html';
-      return req;
-    }
+  // 3) Otherwise treat it as a SPA route: drop trailing slash and serve index.html
+  var base = uri.endsWith('/') ? uri.slice(0, -1) : uri;
+  req.uri = base + '/index.html';
+  return req;
+}
   EOT
+}
+
+resource "null_resource" "invalidate_cloudfront" {
+  triggers = {
+    s3_upload       = var.s3_files_upload_trigger
+    distribution_id = aws_cloudfront_distribution.savenest_frontend.id
+  }
+
+  provisioner "local-exec" {
+    command = <<EOT
+      aws cloudfront create-invalidation \
+        --distribution-id ${aws_cloudfront_distribution.savenest_frontend.id} \
+        --invalidation-batch "{\"Paths\": {\"Quantity\": 1, \"Items\": [\"/*\"]}, \"CallerReference\": \"invalidation-$(date +%s)\"}" \
+        --region us-east-1 \
+        --output text
+    EOT
+
+    # Explicitly use a Unix-style shell that understands the command
+    interpreter = ["sh", "-c"]
+  }
+
+  depends_on = [aws_cloudfront_distribution.savenest_frontend]
 }
