@@ -17,7 +17,7 @@ const features = [
     icon: <Sparkles className="w-8 h-8 text-[#0466C8]" />,
     title: "Payment method",
     description:
-      "Use your debit card or a bank transfer, setup your first plan.",
+      "Use your debit card or a bank transfer to set up your first plan.",
     buttonText: 'Start Saving',
     link: '/join',
   },
@@ -31,7 +31,7 @@ const features = [
   },
   {
     icon: <Gamepad2 className="w-8 h-8 text-[#0466C8]" />,
-    title: "Savings doesn't have to be boring.",
+    title: "Keep Saving, Keep Winning",
     description:
       "Challenge yourself to save better with the help of some healthy competition with friends while Nesty helps you maintain your winning streak.",
     buttonText: 'Take the Challenge',
@@ -133,7 +133,7 @@ export default function FeaturesSection() {
           Automated Savings
         </h2>
         <p className="mt-4 text-2xl text-gray-700 font-spacegrotesk max-w-4xl mx-auto font-semibold">
-          Start saving with as little as ₦100. Choose your savings plan:daily, weekly or monthly with an interest rate of 2% paid daily. Save on your own terms.
+          Start your saving journey with as little as N100 and choose a daily, weekly, or monthly plan that fits your budget, while earning 2% interest as your money grows.
         </p>
 
         <div className="flex justify-center">
