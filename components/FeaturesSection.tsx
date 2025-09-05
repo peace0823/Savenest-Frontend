@@ -89,7 +89,7 @@ export default function FeaturesSection() {
         <h2 className="text-5xl md:text-7xl font-bold text-[#0466C8] font-poppins">
           Automated Savings
         </h2>
-        <p className="mt-4 text-2xl text-gray-700 font-spacegrotesk max-w-4xl mx-auto">
+        <p className="mt-4 text-2xl text-gray-700 font-spacegrotesk max-w-4xl mx-auto font-semibold">
           Start saving with as little as ₦100. Choose your savings plan:daily, weekly or monthly with an interest rate of 2% paid daily. Save on your own terms.
         </p>
 

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useSidebar } from "../context/SidebarContext";
 import { ChevronDownIcon, DotIcon, GridIcon, PackageIcon, PlugIcon, UserCircleIcon } from "lucide-react";
 import SidebarWidget from "./SidebarWidget";
+import { ReceiptText } from "lucide-react";
 
 
 type NavItem = {
@@ -26,7 +27,17 @@ const navItems: NavItem[] = [
     name: "User Profile",
     path: "/profile",
   },
-  
+{
+  icon: <ReceiptText className="h-5 w-5 text-white" />,
+  name: "Income",
+  path: "/dashboard/income",
+},
+{
+  icon: <ReceiptText className="h-5 w-5 text-white" />,
+  name: "Expenses",
+  path: "/dashboard/expenses",
+},
+
 ];
 
 const othersItems: NavItem[] = [

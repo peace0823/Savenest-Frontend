@@ -20,24 +20,26 @@ export default function SigninPage() {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
 
- const loginAction = async (email: string, password: string) => {
-   const result = await apiManager('/api/auth/login', {
-     method: 'POST',
+  // ❌ Commenting out the real API login for now
+  /*
+  const loginAction = async (email: string, password: string) => {
+    const result = await apiManager('/api/auth/login', {
+      method: 'POST',
       data: {
-       email,
+        email,
         password
-     }
-   })
+      }
+    })
     setLoading(false)
-   return result
- }
-
+    return result
+  }
+  */
 
   const handleLogin = (email: string, password: string) => {
-    // add auth validation here
     setLoading(true);
 
-     //Call API
+    // ❌ Commenting out API call logic
+    /*
     loginAction(email, password)
       .then(() => {
         setLoading(false);
@@ -47,28 +49,32 @@ export default function SigninPage() {
         setLoading(false);
         setError(error);
       });
+    */
+
+    // ✅ Direct redirect to dashboard
+    setTimeout(() => {
+      router.push("/dashboard");
+      setLoading(false);
+    }, 700);
   };
 
-   useEffect(() => {
+  // ❌ Commenting out success/error handling since we skip API
+  /*
+  useEffect(() => {
     if (success) {
-      // Call Toastify to show success message
-   toast.success("Login successful!");
-
-     setTimeout(() => {
-        // Redirect to dashboard after login
-       router.push("/dashboard");
-       setLoading(false); // Reset success state
-     }, 700);
-   }
-
-    if (error) {
-      // Call Toastify to show wrong message
-     toast.error("Login failed!");
-     setError(null); // Reset error state
+      toast.success("Login successful!");
+      setTimeout(() => {
+        router.push("/dashboard");
+        setLoading(false);
+      }, 700);
     }
 
+    if (error) {
+      toast.error("Login failed!");
+      setError(null);
+    }
   }, [success, error, router]);
-
+  */
 
   return (
     <section className="w-full px-4 sm:px-6 lg:px-8">
@@ -199,6 +205,5 @@ export default function SigninPage() {
         </div>
       </div>
     </section>
-
   );
 }

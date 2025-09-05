@@ -49,9 +49,12 @@ export default function HowItWorksSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="mt-4 text-lg md:text-2xl text-slate-600 font-grotesk font-semibold"
+                        className="mt-4 text-2xl text-gray-700 font-spacegrotesk max-w-4xl mx-auto font-semibold"
                     >
-                        Savenest is a savings app that secures your money with a saving plan of your own choice and also provides you a community that makes saving enjoyable.
+                       
+                        
+           Savenest is a savings app that secures your money with a saving plan of your own choice and also provides you a community that makes saving enjoyable.
+        
                     </motion.p>
                 </div>
 

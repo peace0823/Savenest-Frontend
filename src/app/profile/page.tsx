@@ -45,8 +45,8 @@ export default function UserProfile() {
           <div className="flex justify-between items-center mb-6">
             <h1 className="text-5xl font-bold">Profile</h1>
             <div className="flex gap-4 text-2xl text-gray-600">
-              <FaBell />
-              <FaUser />
+            
+              
             </div>
           </div>
 
@@ -63,7 +63,7 @@ export default function UserProfile() {
           </div>
 
           {/* Achievements */}
-          <section className="mb-8 bg-amber-200 rounded-2xl">
+          <section className="mb-8 rounded-2xl">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 bg">
               <FaFire className="text-blue-600" />
               Your Achievements
