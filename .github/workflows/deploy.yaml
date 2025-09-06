@@ -12,7 +12,7 @@ jobs:
 
     env:
       AWS_REGION: us-east-1
-      TF_VERSION: 1.4.0
+      TF_VERSION: 1.9.5
       NODE_VERSION: 18
 
     steps:
@@ -79,4 +79,3 @@ jobs:
       # 9. Invalidate CloudFront cache
       - name: Invalidate CloudFront cache
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID }} --paths "/*"
-        
