@@ -130,7 +130,7 @@ export default function FeaturesSection() {
         }`}
       >
         <h2 className="text-5xl md:text-7xl font-bold text-[#0466C8] font-poppins">
-          Automated Savings
+          Smart Savings
         </h2>
         <p className="mt-4 text-2xl text-gray-700 font-spacegrotesk max-w-4xl mx-auto font-semibold">
           Start your saving journey with as little as N100 and choose a daily, weekly, or monthly plan that fits your budget, while earning 2% interest as your money grows.
